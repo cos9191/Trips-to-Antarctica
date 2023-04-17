@@ -58,7 +58,12 @@
           </nav>
         </div>
         <div class="header__bg">
-          <picture><img src="img/content/header_desktop.jpg" srcset="img/content/header_desktop@2x.jpg 2x" width="1366" height="650" alt="Облака, заснеженные горы, залив">
+          <picture>
+            <source type="image/webp" media="(max-width: 767px)" srcset="img/content/header_mobile.webp, img/content/header_mobile@2x.webp 2x">
+            <source type="image/webp" media="(max-width: 1023px)" srcset="img/content/header_tablet.webp, img/content/header_tablet@2x.webp 2x">
+            <source type="image/webp" srcset="img/content/header_desktop.webp, img/content/header_desktop@2x.webp 2x">
+            <source media="(max-width: 767px)" srcset="img/content/header_mobile.jpg, img/content/header_mobile@2x.jpg 2x">
+            <source media="(max-width: 1023px)" srcset="img/content/header_tablet.jpg, img/content/header_tablet@2x.jpg 2x"><img src="img/content/header_desktop.jpg" srcset="img/content/header_desktop@2x.jpg 2x" width="1366" height="650" alt="Облака, заснеженные горы, залив">
           </picture>
         </div>
       </header>
