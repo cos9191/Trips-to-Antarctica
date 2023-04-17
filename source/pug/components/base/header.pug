@@ -37,5 +37,4 @@ mixin header(headerMods, currentUrl)
                 else
                   a.main-nav__link(href=link.href)=link.text
     div.header__bg
-      picture
-        +img("content", "header_desktop", "jpg", 1366, 650, "Облака, заснеженные горы, залив")
+      +picture("content", "header", "jpg", 1366, 650, "Облака, заснеженные горы, залив")
