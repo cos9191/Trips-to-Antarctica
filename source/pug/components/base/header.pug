@@ -36,5 +36,8 @@ mixin header(headerMods, currentUrl)
                   span.main-nav__link.is-active=link.text
                 else
                   a.main-nav__link(href=link.href)=link.text
+    div.header__hero
+      h1 Круизы в Антарктику
+      p Волшебный мир айсбергов и пингвинов
     div.header__bg
       +picture("content", "header", "jpg", 1366, 650, "Облака, заснеженные горы, залив")

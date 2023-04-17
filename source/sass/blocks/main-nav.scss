@@ -1,13 +1,30 @@
+@use "../variables" as v;
+@use "../mixins" as m;
+
+
 .main-nav {
   &__list {
     display: flex;
+    flex-wrap: wrap;
     margin: 0;
     //margin-right: 20px;
     //margin-left: 60px;
     padding: 0;
     gap: 33px;
 
+    font-weight: 500;
+
     list-style: none;
+
+    @include m.vp-1023 {
+      font-size: 14px;
+      line-height: 17px;
+      gap: 23px;
+    }
+
+    @include m.vp-767 {
+      display: none;
+    }
   }
 
   &__item {
