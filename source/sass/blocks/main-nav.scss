@@ -2,19 +2,20 @@
   &__list {
     display: flex;
     margin: 0;
-    margin-right: 20px;
-    margin-left: 60px;
+    //margin-right: 20px;
+    //margin-left: 60px;
     padding: 0;
+    gap: 33px;
 
     list-style: none;
   }
 
   &__item {
-    margin-right: 20px;
+
   }
 
   &__link {
-    color: $color-default-white;
+    color: inherit;
 
     &.is-active {
       opacity: 0.6;

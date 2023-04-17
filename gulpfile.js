@@ -6,6 +6,8 @@ import {copy, copyImages, copySvg} from './gulp/copyAssets.mjs';
 import js from './gulp/compileScripts.mjs';
 import {optimizeSvg, sprite, createWebp, optimizePng, optimizeJpg} from './gulp/optimizeImages.mjs';
 import pug from './gulp/compilePug.mjs';
+import bemlinter from 'gulp-html-bemlinter';
+import { htmlValidator } from "gulp-w3c-html-validator";
 
 const server = browserSync.create();
 const streamStyles = () => compileStyles().pipe(server.stream());
@@ -14,6 +16,18 @@ const refresh = (done) => {
   server.reload();
   done();
 };
+
+const lintBem = () => {
+  return gulp.src('build/*.html')
+    .pipe(bemlinter());
+}
+
+const validateMarkup = () => {
+  return gulp.src(['build/*.html', '!build/sitemap.html', '!build/ui-kit.html'])
+    .pipe(htmlValidator.analyzer())
+    .pipe(htmlValidator.reporter({ throwErrors: true }));
+}
+
 
 const syncServer = () => {
   server.init({
@@ -43,4 +57,4 @@ const dev = gulp.series(clean, copy, sprite, gulp.parallel(compileMinStyles, js,
 const start = gulp.series(clean, copy, sprite, gulp.parallel(compileStyles, js, pug), syncServer);
 const nomin = gulp.series(clean, copy, sprite, gulp.parallel(compileStyles, js, pug, optimizePng, optimizeJpg, optimizeSvg));
 
-export {createWebp as webp, build, start, dev, nomin};
+export {createWebp as webp, build, start, dev, nomin, lintBem, validateMarkup};

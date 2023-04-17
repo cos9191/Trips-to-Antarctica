@@ -2,26 +2,28 @@ mixin header(headerMods, currentUrl)
   -
     const headerLinks = [
       {
-        href: "index.html",
-        text: "Главная"
+        href: "#",
+        text: "Преимущества "
       },
       {
         href: "#",
-        text: "Страница 2"
+        text: "Направления"
       },
       {
         href: "#",
-        text: "Страница 3"
+        text: "Ближайшие круизы"
+      },
+      {
+        href: "#",
+        text: "Контакты"
       },
     ]
 
   header.header(class=headerMods)
     .container
-      if(currentUrl === "index.html")
-        //- lighthouse снимает 10 баллов SEO за <a> без href
-        span.header__logo Логотип
-      else
-        a.header__logo(href="index.html", aria-label="Переход на главную") Логотип
+      a.header__logo(href="index.html")
+        div
+          +icon("logo", 70, 38)
       nav.main-nav
         button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
           +icon("icon-burger", 20, 20)
@@ -34,3 +36,6 @@ mixin header(headerMods, currentUrl)
                   span.main-nav__link.is-active=link.text
                 else
                   a.main-nav__link(href=link.href)=link.text
+    div.header__bg
+      picture
+        +img("content", "header_desktop", "jpg", 1366, 650, "Облака, заснеженные горы, залив")

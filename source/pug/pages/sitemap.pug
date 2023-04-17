@@ -1,7 +1,7 @@
 extends ../components/base/layout
 
 block variables
-  - const title = "Список страниц"
+  - const title = "Круизы в Антарктику"
 
 block main
   style.
@@ -51,19 +51,20 @@ block main
   -
     const pages = [
       {
-        name: "UI-kit — ui-kit.html",
-        src: "ui-kit.html"
-      },
-      {
         name: "Главная — index.html",
         src: "index.html"
+      },
+      {
+        name: "UI-kit — ui-kit.html",
+        src: "ui-kit.html"
       },
     ]
 
   main
     .container
-      img(src="https://via.placeholder.com/300x150" width="300" alt="Логотип проекта")
-      h1 Список страниц
+      img(src="./img/svg/logo.svg" width="300" alt="Логотип проекта")
+      h1 Разводящая страница
+      p Проект - "Круизы в Антарктику" #[br] Автор - Константин Федоров
       ol
         each page in pages
           li

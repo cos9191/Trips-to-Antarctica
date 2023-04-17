@@ -1,13 +1,50 @@
-.header {
-  padding: 28px 0;
+@use "../variables" as v;
+@use "../mixins" as m;
 
-  background-color: $color-neon-blue;
+.header {
+  position: relative;
+
+  padding: 35px 0;
+  height: 650px;
+
+  color: v.$color-alice-blue;
+
+  background-color: v.$color-default-bg;
 
   .container {
+    position: relative;
+    z-index: 1;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  a {
+    transition: opacity v.$trans-default;
+
+    @include m.hover-focus {
+      opacity: 0.6;
+    }
   }
 
   &__logo {
-    color: $color-default-white;
+    color: v.$color-default-white;
+  }
+
+  &__bg {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    img {
+      object-fit: cover;
+      object-position: bottom;
+
+      height: 100%;
+      width: 100%;
+    }
   }
 }

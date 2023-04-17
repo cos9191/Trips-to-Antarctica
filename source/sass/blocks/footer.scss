@@ -1,5 +1,8 @@
+@use "../variables" as v;
+@use "../mixins" as m;
+
 .footer {
   padding: 40px 0;
 
-  background-color: $color-neon-blue;
+  background-color: v.$color-light-sky-blue;
 }

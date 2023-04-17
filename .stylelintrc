@@ -4,6 +4,7 @@
   "rules": {
     "declaration-no-important": true,
     "indentation": [2, {"ignore": ["inside-parens"]}],
-    "max-nesting-depth": [4, {"ignoreAtRules": ["media", "include"]}]
+    "max-nesting-depth": [4, {"ignoreAtRules": ["media", "include"]}],
+    "at-rule-no-unknown": null
   }
 }
