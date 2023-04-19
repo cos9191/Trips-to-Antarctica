@@ -25,8 +25,6 @@ mixin footer(footerMods)
         div
           +icon("logo", 70, 38)
       nav.main-nav
-        button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
-          +icon("icon-burger", 20, 20)
         .main-nav__wrapper
           ul.main-nav__list
             each link in headerLinks

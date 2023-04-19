@@ -19,15 +19,23 @@ mixin header(headerMods, currentUrl)
       },
     ]
 
-  header.header(class=headerMods)
+  header.header(class=headerMods data-header)
     .container
       a.header__logo(href="index.html")
         div
           +icon("logo", 70, 38)
-      nav.main-nav
-        button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
-          +icon("icon-burger", 20, 20)
-        .main-nav__wrapper
+      button.header__burger.btn-reset(
+        type="button",
+        aria-label="Переключатель отображения меню",
+        aria-pressed="false"
+        data-burger
+      )
+        span
+      nav.main-nav.main-nav--burger-menu
+        div.main-nav__wrapper
+          a.main-nav__logo(href="index.html")
+            div
+              +icon("logo", 42, 22)
           ul.main-nav__list
             each link in headerLinks
               - const activeState = currentUrl === link.href
@@ -39,5 +47,5 @@ mixin header(headerMods, currentUrl)
     div.header__hero
       h1 Круизы в Антарктику
       p Волшебный мир айсбергов и пингвинов
-    div.header__bg
+    div.header__bg(data-close-menu)
       +picture("content", "header", "jpg", 1366, 650, "Облака, заснеженные горы, залив")
