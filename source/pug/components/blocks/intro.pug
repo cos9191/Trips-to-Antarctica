@@ -1,10 +1,11 @@
 mixin intro()
-  .intro
+  section.intro
     //- вставлять блоки во внешний контейнер неверно
     //- все блоки содержат в себе container без доп класса tutorial__wrapper
     .container
-      p(style="margin-top: 40px; background-color: gray;") Текст&nbsp;с&nbsp;мнемониками
-
-      p(style="margin-top: 40px;") Пример использования +img()
-      p(style="margin-bottom: 40px;")
-        +img("content", "placeholder", "png", 120, 120, "Пример")
+      div
+        h2 Путешествие на&nbsp;край Земли
+        p Это волшебное путешествие поможет вам познакомиться поближе с&nbsp;удивительным миром Антарктики. Наш круизный лайнер отвезет вас на&nbsp;край Земли, где вы&nbsp;сможете увидеть: ледяные айсберги, несколько видов пингвинов, китов, морских котиков и&nbsp;многое другое.
+      +picture("content/intro", "penguins", "jpg", 560, 301, "Стайка пингвинов на снегу.")
+      //div
+      //  +picture("content/intro", "penguins", "jpg", 560, 301, "Стайка пингвинов на снегу.")

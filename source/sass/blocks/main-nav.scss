@@ -8,7 +8,7 @@
 
   &--burger-menu {
     @include m.vp-767 {
-      position: absolute;
+      position: fixed;
       top: 0;
       right: 0;
 
