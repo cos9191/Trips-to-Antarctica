@@ -5,7 +5,7 @@
   .container {
     display: grid;
     grid-template-columns: repeat(2, minmax(10px, 1fr));
-    place-items: center;
+    //place-items: center;
     gap: 90px;
 
     padding: 120px 103px 145px;
@@ -22,12 +22,16 @@
       padding: 65px 15px 85px;
     }
 
-    > h2,
-    > p {
+    > * {
+      place-self: center;
+    }
+
+    div h2,
+    div p {
       padding: 0;
     }
 
-    > h2 {
+    div h2 {
       font-weight: 600;
       font-size: 28px;
       line-height: 42px;

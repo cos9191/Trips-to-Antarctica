@@ -904,7 +904,6 @@ button,
   display: grid;
   -ms-grid-columns: (minmax(10px, 1fr))[2];
   grid-template-columns: repeat(2, minmax(10px, 1fr));
-  place-items: center;
   gap: 90px;
   padding: 120px 103px 145px;
 }
@@ -921,23 +920,28 @@ button,
     padding: 65px 15px 85px;
   }
 }
-.intro .container > h2,
-.intro .container > p {
+.intro .container > * {
+  -ms-grid-row-align: center;
+  -ms-grid-column-align: center;
+  place-self: center;
+}
+.intro .container div h2,
+.intro .container div p {
   padding: 0;
 }
-.intro .container > h2 {
+.intro .container div h2 {
   font-weight: 600;
   font-size: 28px;
   line-height: 42px;
 }
 @media (max-width: 1023px) {
-  .intro .container > h2 {
+  .intro .container div h2 {
     font-size: 26px;
     line-height: 36px;
   }
 }
 @media (max-width: 767px) {
-  .intro .container > h2 {
+  .intro .container div h2 {
     font-size: 24px;
     line-height: 34px;
   }
