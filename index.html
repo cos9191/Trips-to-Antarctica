@@ -20,7 +20,6 @@
     <link rel="preload" href="./fonts/montserrat-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="./fonts/montserrat-semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="./fonts/montserrat-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.min.css">
   </head>
   <body>
     <div class="visually-hidden"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-close" viewBox="0 0 20 20"><g fill="currentColor"><path d="M.293 18.291a1 1 0 101.414 1.414L10 11.413l8.292 8.292a1 1 0 101.414-1.414l-8.292-8.292 8.292-8.292A1 1 0 1018.291.293L9.999 8.585 1.707.293A1 1 0 10.293 1.707L8.585 10 .293 18.291z"/></g></symbol><symbol id="logo" viewBox="0 0 70 38"><g fill="currentColor">
@@ -65,8 +64,8 @@
           </nav>
         </div>
         <div class="header__hero">
-          <h1>Круизы в Антарктику</h1>
-          <p>Волшебный мир айсбергов и пингвинов</p>
+          <h1>Круизы в&nbsp;Антарктику</h1>
+          <p>Волшебный мир айсбергов и&nbsp;пингвинов</p>
         </div>
         <div class="header__bg" data-close-menu>
           <picture>
@@ -74,19 +73,28 @@
             <source type="image/webp" media="(max-width: 1023px)" srcset="img/content/header_tablet.webp, img/content/header_tablet@2x.webp 2x">
             <source type="image/webp" srcset="img/content/header_desktop.webp, img/content/header_desktop@2x.webp 2x">
             <source media="(max-width: 767px)" srcset="img/content/header_mobile.jpg, img/content/header_mobile@2x.jpg 2x">
-            <source media="(max-width: 1023px)" srcset="img/content/header_tablet.jpg, img/content/header_tablet@2x.jpg 2x"><img src="img/content/header_desktop.jpg" srcset="img/content/header_desktop@2x.jpg 2x" width="1366" height="650" alt="Облака, заснеженные горы, залив">
+            <source media="(max-width: 1023px)" srcset="img/content/header_tablet.jpg, img/content/header_tablet@2x.jpg 2x"><img src="img/content/header_desktop.jpg" srcset="img/content/header_desktop@2x.jpg 2x" width="1366" height="650" alt="Облака, заснеженные горы, залив.">
           </picture>
         </div>
       </header>
       <main>
-        <div class="intro">
+        <section class="intro">
           <div class="container">
-            <p style="margin-top: 40px; background-color: gray;">Текст&nbsp;с&nbsp;мнемониками</p>
-            <p style="margin-top: 40px;">Пример использования +img()</p>
-            <p style="margin-bottom: 40px;"><img src="img/content/placeholder.png" srcset="img/content/placeholder@2x.png 2x" width="120" height="120" alt="Пример">
-            </p>
+            <div>
+              <h2>Путешествие на&nbsp;край Земли</h2>
+              <p>Это волшебное путешествие поможет вам познакомиться поближе с&nbsp;удивительным миром Антарктики. Наш круизный лайнер отвезет вас на&nbsp;край Земли, где вы&nbsp;сможете увидеть: ледяные айсберги, несколько видов пингвинов, китов, морских котиков и&nbsp;многое другое.</p>
+            </div>
+            <picture>
+              <source type="image/webp" media="(max-width: 767px)" srcset="img/content/intro/penguins_mobile.webp, img/content/intro/penguins_mobile@2x.webp 2x">
+              <source type="image/webp" media="(max-width: 1023px)" srcset="img/content/intro/penguins_tablet.webp, img/content/intro/penguins_tablet@2x.webp 2x">
+              <source type="image/webp" srcset="img/content/intro/penguins_desktop.webp, img/content/intro/penguins_desktop@2x.webp 2x">
+              <source media="(max-width: 767px)" srcset="img/content/intro/penguins_mobile.jpg, img/content/intro/penguins_mobile@2x.jpg 2x">
+              <source media="(max-width: 1023px)" srcset="img/content/intro/penguins_tablet.jpg, img/content/intro/penguins_tablet@2x.jpg 2x"><img src="img/content/intro/penguins_desktop.jpg" srcset="img/content/intro/penguins_desktop@2x.jpg 2x" width="560" height="301" alt="Стайка пингвинов на снегу.">
+            </picture>
+            <!--div-->
+            <!--  +picture("content/intro", "penguins", "jpg", 560, 301, "Стайка пингвинов на снегу.")-->
           </div>
-        </div>
+        </section>
       </main>
       <footer class="footer">
         <div class="container"><a class="footer__logo" href="index.html">
