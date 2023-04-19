@@ -65,7 +65,6 @@ export class Burger {
 
   _onDocumentClick(evt) {
     if (evt.target.hasAttribute('data-close-menu')) {
-      console.log(1);
       this._closeMenu();
     }
   }

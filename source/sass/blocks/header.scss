@@ -241,6 +241,7 @@
     display: block;
     width: 100vw;
     height: 100vh;
+
     @include m.vp-767 {
       background-color: rgba(0, 43, 102, 0.5);
     }
