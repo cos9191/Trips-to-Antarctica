@@ -1,0 +1,165 @@
+@use "../variables" as v;
+@use "../mixins" as m;
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.catalog {
+  background-color: #e5e5e5;
+
+  .container {
+    padding: 95px 118px 120px;
+    max-width: 1366px;
+
+    @include m.vp-1023 {
+      padding: 100px 60px;
+    }
+
+    @include m.vp-767 {
+      padding: 65px 25px;
+    }
+  }
+
+  h2 {
+    text-align: center;
+
+    margin: 0;
+
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 42px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 30px;
+
+    margin-top: 60px;
+    margin-bottom: 0;
+    padding-left: 0;
+
+    list-style-type: none;
+
+    @include m.vp-1023 {
+      grid-template-columns: repeat(2, minmax(10px, 1fr));
+    }
+
+    @include m.vp-767 {
+      grid-template-columns: repeat(1, minmax(10px, 1fr));
+
+      margin-top: 60px;
+    }
+
+    .catalog__item {
+      justify-self: center;
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    min-height: 386px;
+    max-height: 386px;
+    width: 260px;
+
+    transition: opacity v.$trans-default;
+
+    @include m.vp-1023 {
+      width: 100%;
+      max-height: unset;
+      aspect-ratio: 1/1.25;
+    }
+
+    &-content {
+      position: relative;
+      z-index: 1;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      padding: 30px;
+      height: 100%;
+
+      color: v.$color-default-white;
+
+      @include m.vp-1023 {
+        justify-content: space-around;
+      }
+
+      &:hover,
+      &:focus,
+      &:focus-within {
+        background-color: v.$color-default-black;
+
+        padding: 30px 25px;
+
+        .catalog__item-details {
+          display: grid;
+          animation: fadeIn 1s;
+        }
+      }
+
+      h3 {
+        display: inline-block;
+        vertical-align: bottom;
+
+        margin: 0;
+
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 27px;
+      }
+    }
+
+    &-details {
+      display: none;
+
+      grid-template-columns: repeat(1, minmax(10px, 1fr));
+      gap: 10px;
+
+      //overflow: auto;
+
+      dl {
+        margin: 0;
+      }
+
+      dt {
+        margin-top: 10px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      dd {
+        margin: 5px 0 0;
+
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+
+    &-bg {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      img {
+        object-fit: cover;
+
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
