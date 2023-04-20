@@ -1,0 +1,38 @@
+mixin features()
+  -
+    const featureList = [
+      {
+        iconName: "features_small_ship",
+        iconWidth: 27,
+        iconHeight: 32,
+        title: "Небольшой круизный лайнер",
+        text: "Круизный лайнер, рассчитанный всего лишь на\u00A0300\u00A0гостей, поможет избежать шума и\u00A0очередей и\u00A0даст возможность насладиться видами и\u00A0природой."
+      },
+      {
+        iconName: "features_all-inclusive",
+        iconWidth: 38,
+        iconHeight: 32,
+        title: "Система все включено",
+        text: "Все наши круизы работают по\u00A0системе \u00ABВсе Включено\u00BB. Великолепные блюда и\u00A0безлимитный бар доступны для вас 24\u00A0часа."
+      },
+      {
+        iconName: "features_zodiac_tours",
+        iconWidth: 44,
+        iconHeight: 32,
+        title: "Экскурсионные туры на\u00A0Zodiac",
+        text: "Экскурсионные туры к\u00A0берегам Антарктиды совершаются на\u00A0оборудованных лодках типа Zodiac c\u00A0опытными экскурсоводами."
+      },
+    ]
+
+  section.features
+    .container
+      .features__content
+        h2 Преимущества
+        ul.features__list
+          each feature in featureList
+            li.features__item
+              +icon(feature.iconName, feature.iconWidth, feature.iconHeight)
+              h3=feature.title
+              p=feature.text
+      .features__bg
+        +picture("content/features", "bg", "jpg", 1366, 562, ".")

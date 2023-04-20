@@ -1,0 +1,85 @@
+@use "../variables" as v;
+@use "../mixins" as m;
+
+.features {
+  position: relative;
+
+  .container {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+
+    > h2 {
+      text-align: center;
+
+      margin: 0;
+
+      font-weight: 600;
+      font-size: 28px;
+      line-height: 42px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(10px, 1fr));
+    gap: 40px;
+
+    margin-top: 60px;
+    margin-bottom: 0;
+    padding-left: 0;
+
+    list-style-type: none;
+
+    @include m.vp-1023 {
+      gap: 30px;
+    }
+
+    @include m.vp-767 {
+      grid-template-columns: repeat(1, minmax(10px, 1fr));
+    }
+  }
+
+  &__item {
+    padding: 30px 30px 50px;
+
+    background-color: v.$color-default-white;
+
+    h3 {
+      margin-top: 25px;
+      margin-bottom: 0;
+
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 27px;
+    }
+
+    p {
+      margin-top: 20px;
+      margin-bottom: 0;
+
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    img {
+      object-fit: cover;
+      object-position: bottom;
+
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
