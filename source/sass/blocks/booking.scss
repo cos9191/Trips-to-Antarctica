@@ -5,7 +5,15 @@
   position: relative;
 
   .container {
-    padding: 50px 163px;
+    padding: 50px 11.93%;
+
+    @include m.vp-1023 {
+      padding: 100px 50px;
+    }
+
+    @include m.vp-767 {
+      padding: 65px 15px;
+    }
   }
 
   &__content {
@@ -14,7 +22,16 @@
 
     display: grid;
     grid-template-columns: repeat(2, minmax(10px, 1fr));
-    gap: 144px;
+    column-gap: 10.54%;
+    row-gap: 60px;
+
+    @include m.vp-1023 {
+      grid-template-columns: repeat(1, minmax(10px, 1fr));
+    }
+
+    @include m.vp-767 {
+      row-gap: 40px;
+    }
   }
 
   &__text {
@@ -25,6 +42,18 @@
 
       font-size: 40px;
       line-height: 60px;
+
+      @include m.vp-1023 {
+        text-align: center;
+
+        font-size: 34px;
+        line-height: 51px;
+      }
+
+      @include m.vp-767 {
+        font-size: 24px;
+        line-height: 31px;
+      }
     }
 
     p {
@@ -32,6 +61,11 @@
 
       font-size: 18px;
       line-height: 27px;
+    }
+
+    @include m.vp-767 {
+      font-size: 16px;
+      line-height: 22px;
     }
   }
 
@@ -52,13 +86,20 @@
   }
 
   &__form-wrapper {
+    place-self: center;
+
     padding: 50px;
-    max-width: 403px;
+    width: 403px;
 
     color: v.$color-default-white;
 
     background-color: v.$color-default-black;
     box-shadow: 0 4px 45px 0 rgba(1, 28, 64, 0.15);
+
+    @include m.vp-767 {
+      padding: 40px 30px;
+      width: 100%;
+    }
 
     h3 {
       margin: 0;
@@ -66,6 +107,10 @@
       font-weight: 500;
       font-size: 18px;
       line-height: 27px;
+
+      @include m.vp-767 {
+        line-height: 25px;
+      }
     }
 
     .custom-toggle__label {
