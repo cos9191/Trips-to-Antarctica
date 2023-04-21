@@ -332,6 +332,51 @@
             </ul>
           </div>
         </section>
+        <section class="booking">
+          <div class="container">
+            <div class="booking__content">
+              <div class="booking__text">
+                <h2>Раннее бронирование</h2>
+                <p>Забронируйте тур за&nbsp;3-6 месяцев до&nbsp;даты выезда и&nbsp;сэкономьте до&nbsp;50%</p>
+              </div>
+              <div class="booking__form-wrapper" data-form-validate data-callback="base">
+                <h3>Оставьте заявку и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время</h3>
+                <form class="booking__form" method="post" action="https://echo.htmlacademy.ru/">
+                  <div class="custom-input" data-required data-on-input-validate data-validate-type="text" data-message-base="Укажите Ваше имя" title="Укажите Ваше имя">
+                    <label>
+                      <input type="text" id="name" name="name" placeholder="Имя">
+                    </label>
+                  </div>
+                  <div class="custom-input" data-required data-on-input-validate data-validate-type="phone" data-message-base="Укажите номер телефона" title="Укажите номер телефона">
+                    <label>
+                      <input type="tel" id="phone-number" name="phone-number" placeholder="Телефон">
+                    </label>
+                  </div>
+                  <div class="custom-input" data-required data-on-input-validate data-validate-type="email" data-message-base="Укажите адрес электронной почты" title="Укажите адрес электронной почты">
+                    <label>
+                      <input type="email" id="email" name="email" placeholder="Email">
+                    </label>
+                  </div>
+                  <div class="custom-toggle custom-toggle--checkbox" data-required data-validate-type="checkbox" title="Поставьте галочку, юридическая формальность">
+                    <label>
+                      <input type="checkbox" id="personal-data" name="personal-data" checked><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Я&nbsp;согласен на&nbsp;обработку моих персональных данных</span>
+                    </label>
+                  </div>
+                  <input class="btn" type="submit" value="Оставить заявку">
+                </form>
+              </div>
+            </div>
+            <div class="booking__bg">
+              <picture>
+                <source type="image/webp" media="(max-width: 767px)" srcset="img/content/booking/bg_mobile.webp, img/content/booking/bg_mobile@2x.webp 2x">
+                <source media="(max-width: 767px)" srcset="img/content/booking/bg_mobile.jpg, img/content/booking/bg_mobile@2x.jpg 2x">
+                <source type="image/webp" media="(max-width: 1023px)" srcset="img/content/booking/bg_tablet.webp, img/content/booking/bg_tablet@2x.webp 2x">
+                <source media="(max-width: 1023px)" srcset="img/content/booking/bg_tablet.jpg, img/content/booking/bg_tablet@2x.jpg 2x">
+                <source type="image/webp" srcset="img/content/booking/bg_desktop.webp, img/content/booking/bg_desktop@2x.webp 2x"><img src="img/content/booking/bg_desktop.jpg" srcset="img/content/booking/bg_desktop@2x.jpg 2x" width="1366" height="555" alt=".">
+              </picture>
+            </div>
+          </div>
+        </section>
       </main>
       <footer class="footer">
         <div class="container"><a class="footer__logo" href="index.html">

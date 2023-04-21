@@ -28,9 +28,11 @@ window.addEventListener('DOMContentLoaded', () => {
     uploadImageDrop();
     const select = new CustomSelect();
     select.init();
+
     const form = new Form();
     window.form = form;
     form.init();
+
   });
 });
 

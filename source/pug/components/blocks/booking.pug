@@ -1,0 +1,70 @@
+mixin booking()
+  section.booking
+    .container
+      .booking__content
+        .booking__text
+          h2 Раннее бронирование
+          p Забронируйте тур за&nbsp;3-6 месяцев до&nbsp;даты выезда и&nbsp;сэкономьте до&nbsp;50%
+        .booking__form-wrapper(
+          data-form-validate
+          data-callback="base"
+        )
+          h3 Оставьте заявку и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время
+
+          form.booking__form(
+            method="post"
+            action="https://echo.htmlacademy.ru/"
+          )
+            +custom-input({
+              inputId: "name",
+              inputName: "name",
+              inputPlaceholder: "Имя",
+            })(
+              data-required,
+              data-on-input-validate,
+              data-validate-type="text",
+              data-message-base="Укажите Ваше имя",
+              title="Укажите Ваше имя",
+              )
+
+            +custom-input({
+              inputType: "tel",
+              inputId: "phone-number",
+              inputName: "phone-number",
+              inputPlaceholder: "Телефон",
+            })(
+              data-required,
+              data-on-input-validate,
+              data-validate-type="phone",
+              data-message-base="Укажите номер телефона",
+              title="Укажите номер телефона",
+            )
+
+            +custom-input({
+              inputType: "email",
+              inputId: "email",
+              inputName: "email",
+              inputPlaceholder: "Email",
+            })(
+              data-required,
+              data-on-input-validate,
+              data-validate-type="email",
+              data-message-base="Укажите адрес электронной почты",
+              title="Укажите адрес электронной почты",
+            )
+
+            +custom-toggle({
+              inputLabel: "Я&nbsp;согласен на&nbsp;обработку моих персональных данных",
+              inputId: "personal-data",
+              inputChecked: true,
+              inputName: "personal-data",
+            })(
+              data-required,
+              data-validate-type="checkbox",
+              title="Поставьте галочку, юридическая формальность",
+            ).custom-toggle--checkbox
+
+            input.btn(type="submit" value="Оставить заявку")
+
+      .booking__bg
+        +picture("content/booking", "bg", "jpg", 1366, 555, ".")
