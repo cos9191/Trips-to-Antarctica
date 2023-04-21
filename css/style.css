@@ -180,9 +180,9 @@ select,
 textarea {
   margin: 0;
   /* 2 */
-  font-size: 100%;
+  font-size: 14px;
   /* 1 */
-  line-height: 1.15;
+  line-height: 21px;
   /* 1 */
   font-family: inherit;
   /* 1 */
@@ -1109,7 +1109,7 @@ button,
 }
 
 .booking .container {
-  padding: 50px 163px;
+  padding: 50px 11.93%;
 }
 
 .booking__content {
@@ -1119,7 +1119,10 @@ button,
   display: grid;
   -ms-grid-columns: (minmax(10px, 1fr))[2];
   grid-template-columns: repeat(2, minmax(10px, 1fr));
-  gap: 144px;
+  -webkit-column-gap: 10.54%;
+  -moz-column-gap: 10.54%;
+  column-gap: 10.54%;
+  row-gap: 60px;
 }
 
 .booking__text {
@@ -1158,8 +1161,11 @@ button,
 }
 
 .booking__form-wrapper {
+  -ms-grid-row-align: center;
+  -ms-grid-column-align: center;
+  place-self: center;
   padding: 50px;
-  max-width: 403px;
+  width: 403px;
   color: #f9fbfd;
   background-color: #011c40;
   -webkit-box-shadow: 0 4px 45px 0 rgba(1, 28, 64, 0.15);
@@ -1421,7 +1427,7 @@ button,
 .custom-textarea label textarea {
   width: 100%;
   min-height: 43px;
-  padding: 11px 16px;
+  padding: 9px 14px;
   border: 2px solid transparent;
   -webkit-transition: -webkit-box-shadow 0.3s ease;
   transition: -webkit-box-shadow 0.3s ease;
@@ -1547,8 +1553,8 @@ button,
   position: absolute;
   top: 0;
   left: 0;
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   background-color: #f9fbfd;
   -webkit-transition: opacity 0.3s ease, border 0.3s ease;
   -o-transition: opacity 0.3s ease, border 0.3s ease;
@@ -2025,6 +2031,21 @@ button,
     justify-content: space-around;
   }
 
+  .booking .container {
+    padding: 100px 50px;
+  }
+
+  .booking__content {
+    -ms-grid-columns: (minmax(10px, 1fr))[1];
+    grid-template-columns: repeat(1, minmax(10px, 1fr));
+  }
+
+  .booking__text h2 {
+    text-align: center;
+    font-size: 34px;
+    line-height: 51px;
+  }
+
   .footer {
     font-size: 12px;
     line-height: 15px;
@@ -2147,6 +2168,33 @@ button,
     -ms-grid-columns: (minmax(10px, 1fr))[1];
     grid-template-columns: repeat(1, minmax(10px, 1fr));
     margin-top: 60px;
+  }
+
+  .booking .container {
+    padding: 65px 15px;
+  }
+
+  .booking__content {
+    row-gap: 40px;
+  }
+
+  .booking__text h2 {
+    font-size: 24px;
+    line-height: 31px;
+  }
+
+  .booking__text {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .booking__form-wrapper {
+    padding: 40px 30px;
+    width: 100%;
+  }
+
+  .booking__form-wrapper h3 {
+    line-height: 25px;
   }
 
   .footer .container {
