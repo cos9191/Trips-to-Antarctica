@@ -1,0 +1,69 @@
+@use "../variables" as v;
+@use "../mixins" as m;
+
+.contacts {
+  background-color: v.$color-default-white;
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(10px, 1fr));
+    gap: 100px;
+
+    padding: 120px 103px;
+
+    @include m.vp-1023 {
+      gap: 30px;
+
+      padding: 100px 45px;
+    }
+
+    @include m.vp-767 {
+      grid-template-columns: repeat(1, minmax(10px, 1fr));
+      gap: 40px;
+
+      padding: 65px 15px;
+    }
+  }
+
+  iframe {
+    border: 0;
+    width: 100%;
+    height: 306px;
+
+    @include m.vp-1023 {
+      height: 335px;
+    }
+
+    @include m.vp-767 {
+      height: 316px;
+    }
+  }
+
+  h3 {
+    margin: 0;
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    margin: 45px 0 0;
+    padding-left: 0;
+
+    list-style-type: none;
+  }
+
+  @include m.vp-1023 {
+    margin-top: 40px;
+  }
+
+  li {
+    display: flex;
+    gap: 10px;
+  }
+}

@@ -2,6 +2,8 @@
 @use "../mixins" as m;
 
 .intro {
+  background-color: v.$color-default-white;
+
   .container {
     display: grid;
     grid-template-columns: repeat(2, minmax(10px, 1fr));

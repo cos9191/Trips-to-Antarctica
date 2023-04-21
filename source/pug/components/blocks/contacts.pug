@@ -1,0 +1,15 @@
+mixin contacts()
+    section.contacts(id="contacts")
+      .container
+        h2.visually-hidden Контакты
+        .contacts__map
+            <iframe src="https://yandex.ru/map-widget/v1/?ll=30.323929%2C59.939762&mode=whatshere&tab=inside&whatshere%5Bpoint%5D=30.323037%2C59.938631&whatshere%5Bzoom%5D=17&z=17.5"  style="position:relative;"></iframe>
+        .contacts__text
+          h3 У&nbsp;вас ещё остались вопросы или сомнения? Приезжайте к&nbsp;нам в&nbsp;офис и&nbsp;мы&nbsp;вам все расскажем.
+          ul
+            li
+              +icon("map-pin", 22, 22)
+              a(href="#!") г. Санкт Петербург, ул. Большая Конюшенная, 19/8
+            li
+              +icon("phone", 22, 22)
+              a(href="tel:+78002000000") 8-800-200-00-00
