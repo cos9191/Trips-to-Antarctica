@@ -1214,10 +1214,16 @@ html {
   padding: 120px 103px;
 }
 
-.contacts iframe {
+.contacts .contacts__map {
   border: 0;
   width: 100%;
   height: 306px;
+}
+
+.contacts .contacts__text {
+  -ms-grid-row-align: center;
+  -ms-grid-column-align: center;
+  place-self: center;
 }
 
 .contacts h3 {
@@ -1246,6 +1252,13 @@ html {
   display: -ms-flexbox;
   display: flex;
   gap: 10px;
+  -webkit-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+
+.contacts li.focus-visible:focus {
+  opacity: 0.6;
 }
 
 .footer {
@@ -2081,9 +2094,12 @@ html {
     aspect-ratio: 1/1.25;
   }
 
-  .catalog__item-content {
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
+  .catalog__item-content:hover,
+  .catalog__item-content:focus,
+  .catalog__item-content:focus-within {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
   }
 
   .booking .container {
@@ -2106,7 +2122,7 @@ html {
     padding: 100px 45px;
   }
 
-  .contacts iframe {
+  .contacts .contacts__map {
     height: 335px;
   }
 
@@ -2272,8 +2288,14 @@ html {
     padding: 65px 15px;
   }
 
-  .contacts iframe {
+  .contacts .contacts__map {
     height: 316px;
+  }
+
+  .contacts .contacts__text {
+    -webkit-box-ordinal-group: 0;
+    -ms-flex-order: -1;
+    order: -1;
   }
 
   .footer .container {
@@ -2352,6 +2374,10 @@ html {
   }
 
   .header__burger:hover:not(.focus-visible) {
+    opacity: 0.6;
+  }
+
+  .contacts li:hover:not(.focus-visible) {
     opacity: 0.6;
   }
 
