@@ -91,16 +91,16 @@
 
       color: v.$color-default-white;
 
-      @include m.vp-1023 {
-        justify-content: space-around;
-      }
-
       &:hover,
       &:focus,
       &:focus-within {
         background-color: v.$color-default-black;
 
         padding: 30px 25px;
+
+        @include m.vp-1023 {
+          justify-content: space-between;
+        }
 
         .catalog__item-details {
           display: grid;
