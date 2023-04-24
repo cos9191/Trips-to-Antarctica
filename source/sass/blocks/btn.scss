@@ -16,7 +16,9 @@
 
   background-color: v.$color-default-white;
   border: none;
+
   cursor: pointer;
+  user-select: none;
 
   transition: opacity v.$trans-default;
 

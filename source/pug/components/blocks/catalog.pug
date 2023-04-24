@@ -8,7 +8,7 @@ mixin catalog()
         duration: "11 дней",
         price: "от 11500 $",
         bg: "astoria",
-        alt: ".",
+        alt: "Круиз Астория.",
       },
       {
         title: "Круиз \"Элайн\"",
@@ -17,7 +17,7 @@ mixin catalog()
         duration: "20 дней",
         price: "от 14500 $",
         bg: "eline",
-        alt: ".",
+        alt: "Круиз Элайн.",
       },
       {
         title: "Круиз \"Атлантис\"",
@@ -26,7 +26,7 @@ mixin catalog()
         duration: "15 дней",
         price: "от 14500 $",
         bg: "atlantis",
-        alt: ".",
+        alt: "Круиз Атлантис.",
       },
       {
         title: "Круиз \"Одиссей\"",
@@ -35,7 +35,7 @@ mixin catalog()
         duration: "13 дней",
         price: "от 9700 $",
         bg: "odyssey",
-        alt: ".",
+        alt: "Круиз Одиссей.",
       },
       {
         title: "Круиз \"Олимпия\"",
@@ -44,7 +44,7 @@ mixin catalog()
         duration: "21 день",
         price: "от 18600 $",
         bg: "olympia",
-        alt: ".",
+        alt: "Круиз Олимпия.",
       },
       {
         title: "Круиз \"Аврора\"",
@@ -53,7 +53,7 @@ mixin catalog()
         duration: "14 дней",
         price: "от 11700 $",
         bg: "aurora",
-        alt: ".",
+        alt: "Круиз Аврора.",
       },
       {
         title: "Круиз \"Леонор\"",
@@ -62,7 +62,7 @@ mixin catalog()
         duration: "17 дней",
         price: "от 12500 $",
         bg: "leonor",
-        alt: ".",
+        alt: "Круиз Леонор.",
       },
       {
         title: "Круиз \"Минион - 1\"",
@@ -71,7 +71,7 @@ mixin catalog()
         duration: "11 дней",
         price: "от 12300 $",
         bg: "minion-1",
-        alt: ".",
+        alt: "Круиз Минион - 1.",
       },
     ]
 
@@ -80,8 +80,8 @@ mixin catalog()
       h2 Ближайшие круизы
       ul.catalog__list
         each trip in tripList
-          li.catalog__item(tabindex="0")
-            .catalog__item-content
+          li.catalog__item
+            .catalog__item-content(tabindex="0")
               h3=trip.title
               .catalog__item-details
                 dl
@@ -96,4 +96,4 @@ mixin catalog()
                   dd=trip.price
                 +btn({href: "#!", text: "Забронировать"}).catalog__btn
             .catalog__item-bg
-              +picture("content/catalog", trip.bg, "jpg", 260, 386, trip.alt, "desktopOnly")
+              +picture("content/catalog", trip.bg, "jpg", 260, 386, trip.alt)

@@ -6,13 +6,16 @@
 
 $color-light-sky-blue:              #87cefa;
 $color-alice-blue:                  #f9fbfd;
+$color-alice-blue-for-bg:           #eef9fd;
 $color-tangaroa:                    #011c40;
+
 
 // Default
 
 $color-default-black:               $color-tangaroa;
 $color-default-white:               $color-alice-blue;
 $color-default-bg:                  $color-light-sky-blue;
+$color-bg-white:                    $color-alice-blue-for-bg;
 $color-transparent:                 rgba(255, 255, 255, 0);
 
 // Gradient

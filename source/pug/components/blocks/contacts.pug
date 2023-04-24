@@ -3,6 +3,7 @@ mixin contacts()
       .container
         h2.visually-hidden Контакты
         #map.contacts__map()
+          +picture("content/contacts", "map_fallback", "jpg", 560, 306, "Карта с расположением агентства.")
         .contacts__text
           h3 У&nbsp;вас ещё остались вопросы или сомнения? Приезжайте к&nbsp;нам в&nbsp;офис и&nbsp;мы&nbsp;вам все расскажем.
           ul

@@ -4,6 +4,10 @@
 .main-nav {
   z-index: 3;
 
+  display: grid;
+  grid-template-columns: repeat(1, minmax(10px, 1fr));
+  gap: 10px;
+
   transition: transform 0.2s ease-in-out;
 
   &__logo {
@@ -16,12 +20,13 @@
 
     margin: 0;
     padding: 0;
-    gap: 33px;
+    //gap: 33px 10px;
+    gap: 4px 33px;
 
     list-style: none;
 
     @include m.vp-1023 {
-      gap: 23px;
+      gap: 4px 23px;
     }
 
     @include m.vp-767 {
@@ -76,7 +81,7 @@ header .main-nav {
     @include m.vp-767 {
       transform: translate(0);
 
-      overflow: unset;
+      overflow: auto;
     }
   }
 

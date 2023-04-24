@@ -10,53 +10,55 @@
     gap: 90px;
 
     padding: 120px 103px 145px;
-    height: 566px;
+    min-height: 566px;
 
     @include m.vp-1023 {
       gap: 30px;
 
       padding: 100px 45px;
-      height: 464px;
+      min-height: 464px;
     }
 
     @include m.vp-767 {
       grid-template-columns: repeat(1, minmax(10px, 1fr));
 
       padding: 65px 15px 85px;
-      height: unset;
+      min-height: unset;
+    }
+  }
+
+  &__text,
+  &__img {
+    place-self: center;
+  }
+
+  &__text h2 {
+    margin: 0;
+
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 42px;
+
+    @include m.vp-1023 {
+      font-size: 26px;
+      line-height: 36px;
     }
 
-    > * {
-      place-self: center;
+    @include m.vp-767 {
+      font-size: 24px;
+      line-height: 34px;
     }
+  }
 
-    div h2,
-    div p {
-      padding: 0;
+  &__text p {
+    margin: 36px 0 0;
+
+    @include m.vp-1023 {
+      padding-top: 26px;
     }
+  }
 
-    div h2 {
-      font-weight: 600;
-      font-size: 28px;
-      line-height: 42px;
-
-      @include m.vp-1023 {
-        font-size: 26px;
-        line-height: 36px;
-      }
-
-      @include m.vp-767 {
-        font-size: 24px;
-        line-height: 34px;
-      }
-    }
-
-    > p {
-      padding-top: 36px;
-
-      @include m.vp-1023 {
-        padding-top: 26px;
-      }
-    }
+  &__img {
+    background-color: v.$color-default-bg;
   }
 }

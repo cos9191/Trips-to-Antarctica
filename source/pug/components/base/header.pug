@@ -2,8 +2,7 @@ mixin header(headerMods, currentUrl)
   header.header(class=headerMods data-header)
     .container
       a.header__logo(href="index.html")
-        div
-          +icon("logo", 70, 38)
+        +icon("logo", 70, 38)
       button.header__burger.btn-reset(
         type="button",
         aria-label="Переключатель отображения меню",
@@ -11,7 +10,7 @@ mixin header(headerMods, currentUrl)
         data-burger
       )
         span
-      +main-nav()
+      +main-nav().header__main-nav
     div.header__hero
       h1 Круизы в&nbsp;Антарктику
       p Волшебный мир айсбергов и&nbsp;пингвинов

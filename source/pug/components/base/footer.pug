@@ -2,8 +2,7 @@ mixin footer(footerMods)
   footer.footer(class=footerMods)
     .container
       a.footer__logo(href="index.html")
-        div
-          +icon("logo", 70, 38)
+        +icon("logo", 70, 38)
       +main-nav()
       ul.footer__socials-list
           li
