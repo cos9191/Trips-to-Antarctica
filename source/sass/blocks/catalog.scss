@@ -18,11 +18,19 @@
     padding: 95px 118px 120px;
     max-width: 1366px;
 
+    @include m.vp-1279 {
+      padding: 95px 60px 120px;
+    }
+
     @include m.vp-1023 {
       padding: 100px 60px;
     }
 
     @include m.vp-767 {
+      padding: 65px 15%;
+    }
+
+    @include m.vp-374 {
       padding: 65px 25px;
     }
   }
@@ -39,7 +47,7 @@
 
   &__list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: repeat(4, minmax(10px, 1fr));
     gap: 30px;
 
     margin-top: 60px;
@@ -66,15 +74,14 @@
   &__item {
     position: relative;
 
-    min-height: 386px;
-    max-height: 386px;
-    width: 260px;
+    width: 100%;
+    height: 386px;
+    //aspect-ratio: 1/1.5;
 
     transition: opacity v.$trans-default;
 
     @include m.vp-1023 {
-      width: 100%;
-      max-height: unset;
+      height: unset;
       aspect-ratio: 1/1.25;
     }
 
@@ -104,6 +111,7 @@
 
         .catalog__item-details {
           display: grid;
+
           animation: fadeIn 1s;
         }
       }
@@ -126,7 +134,41 @@
       grid-template-columns: repeat(1, minmax(10px, 1fr));
       gap: 10px;
 
-      //overflow: auto;
+      overflow-y: auto;
+
+      scrollbar-width: none;
+
+      ///* stylelint-disable */
+      //&::-webkit-scrollbar {
+      //  display: none;
+      //}
+      ///* stylelint-enable */
+
+      // стили для скроллбара
+      scrollbar-color: rgba(155, 155, 155, 0.8);
+      //scrollbar-width: thin;
+
+      &::-webkit-scrollbar {
+        width: 4px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: rgba(155, 155, 155, 0.8);
+        border-radius: 20px;
+        border: transparent;
+
+        &:hover {
+          background-color: rgba(155, 155, 155, 0.6);
+        }
+
+        &:active {
+          background-color: rgba(155, 155, 155, 0.4);
+        }
+      }
 
       dl {
         margin: 0;
@@ -134,9 +176,18 @@
 
       dt {
         margin-top: 10px;
+
         font-weight: 500;
         font-size: 14px;
         line-height: 20px;
+
+        @include m.vp-1279 {
+          font-size: 13px;
+        }
+
+        @include m.vp-1023 {
+          font-size: 14px;
+        }
       }
 
       dd {
@@ -155,7 +206,10 @@
       right: 0;
 
       img {
-        object-fit: cover;
+        object-fit: fill;
+        //object-fit: contain;
+
+        aspect-ratio: unset;
 
         height: 100%;
         width: 100%;

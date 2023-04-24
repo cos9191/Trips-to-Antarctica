@@ -1,0 +1,33 @@
+mixin main-nav()
+  -
+    const navLinks = [
+      {
+        href: "#features",
+        text: "Преимущества "
+      },
+      {
+        href: "#!",
+        text: "Направления"
+      },
+      {
+        href: "#catalog",
+        text: "Ближайшие круизы"
+      },
+      {
+        href: "#contacts",
+        text: "Контакты"
+      },
+    ]
+
+  nav.main-nav
+    a.main-nav__logo(href = "index.html")
+      div
+        +icon("logo", 42, 22)
+    ul.main-nav__list
+      each link in navLinks
+        - const activeState = currentUrl === link.href
+        li.main-nav__item
+          if(activeState)
+            span.main-nav__link.is-active=link.text
+          else
+            a.main-nav__link(href=link.href)=link.text

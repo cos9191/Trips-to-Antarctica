@@ -6,37 +6,6 @@
 
   transition: transform 0.2s ease-in-out;
 
-  &--burger-menu {
-    @include m.vp-767 {
-      position: fixed;
-      top: 0;
-      right: 0;
-
-      padding: 20px 30px 20px 15px;
-      height: 100vh;
-      /* stylelint-disable-next-line */
-      height: calc(100 * var(--vh, 1vh));
-
-      color: v.$color-default-black;
-
-      background-color: v.$color-default-white;
-
-      transform: translate(100%);
-
-      overflow: hidden;
-    }
-
-    .main-nav__list {
-      @include m.vp-767 {
-        gap: 10px;
-
-        padding-top: 33px;
-
-        overflow: auto;
-      }
-    }
-  }
-
   &__logo {
     display: none;
   }
@@ -58,6 +27,10 @@
     @include m.vp-767 {
       flex-direction: column;
       gap: 10px;
+
+      padding-top: 33px;
+
+      overflow: auto;
     }
   }
 
@@ -73,6 +46,28 @@
     &.is-active {
       opacity: 0.6;
     }
+  }
+}
+
+// Стили мобильного меню в шапке
+header .main-nav {
+  @include m.vp-767 {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    padding: 20px 30px 20px 15px;
+    height: 100vh;
+    /* stylelint-disable-next-line */
+    height: calc(100 * var(--vh, 1vh));
+
+    color: v.$color-default-black;
+
+    background-color: v.$color-default-white;
+
+    transform: translate(100%);
+
+    overflow: hidden;
   }
 }
 

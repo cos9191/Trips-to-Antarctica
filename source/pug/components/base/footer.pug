@@ -1,39 +1,10 @@
 mixin footer(footerMods)
-  -
-    const headerLinks = [
-      {
-        href: "#",
-        text: "Преимущества "
-      },
-      {
-        href: "#",
-        text: "Направления"
-      },
-      {
-        href: "#",
-        text: "Ближайшие круизы"
-      },
-      {
-        href: "#",
-        text: "Контакты"
-      },
-    ]
-
   footer.footer(class=footerMods)
     .container
       a.footer__logo(href="index.html")
         div
           +icon("logo", 70, 38)
-      nav.main-nav
-        .main-nav__wrapper
-          ul.main-nav__list
-            each link in headerLinks
-              - const activeState = currentUrl === link.href
-              li.main-nav__item
-                if(activeState)
-                  span.main-nav__link.is-active=link.text
-                else
-                  a.main-nav__link(href=link.href)=link.text
+      +main-nav()
       ul.footer__socials-list
           li
             a.footer__socials-link(target="_blank" href="https://vk.com/htmlacademy")
