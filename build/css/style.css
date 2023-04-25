@@ -1673,7 +1673,7 @@ html {
 }
 @media (max-width: 767px) {
   .catalog .container {
-    padding: 65px 15px;
+    padding: 65px 15%;
   }
 }
 @media (max-width: 374px) {
