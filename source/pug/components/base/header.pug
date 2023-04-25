@@ -1,8 +1,6 @@
 mixin header(headerMods, currentUrl)
   header.header(class=headerMods data-header)
-    .container
-      a.header__logo(href="index.html")
-        +icon("logo", 70, 38)
+    .container(data-header-container)
       button.header__burger.btn-reset(
         type="button",
         aria-label="Переключатель отображения меню",

@@ -41,8 +41,6 @@
     justify-content: space-between;
     align-items: center;
     gap: 30px;
-
-    min-height: 30px;
   }
 
   a {
@@ -50,6 +48,24 @@
 
     @include m.hover-focus {
       opacity: 0.6;
+    }
+  }
+
+  &__logo {
+    z-index: 1;
+
+    color: v.$color-default-white;
+
+    svg {
+      @include m.vp-1023 {
+        width: 38px;
+        height: 20px;
+      }
+
+      @include m.vp-767 {
+        width: 42px;
+        height: 22px;
+      }
     }
   }
 
@@ -213,7 +229,13 @@
     }
   }
 
-  // opened menu bg
+  // Logo opened menu state
+
+  .header__logo {
+    @include m.vp-767 {
+      opacity: 0;
+    }
+  }
 
   .header__bg::after {
     content: "";

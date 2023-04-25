@@ -4,7 +4,10 @@ import {FocusLock} from './../../utils/focus-lock';
 export class Burger {
   constructor() {
     this._header = document.querySelector('[data-header]');
+    this._headerContainer = document.querySelector('[data-header-container]');
+    this._mobileMenu = document.querySelector('[data-mobile-menu]');
     this._burger = document.querySelector('[data-burger]');
+    this._logo = document.querySelector('[data-logo]');
     this._scrollLock = new ScrollLock();
     this._focusLock = new FocusLock();
     this._isMenuOpen = false;
@@ -27,6 +30,7 @@ export class Burger {
     this._isMenuOpen = true;
     this._header.classList.add('is-open');
     this._scrollLock.disableScrolling();
+    this._mobileMenu.insertBefore(this._logo, this._mobileMenu.firstChild);
     document.addEventListener('keydown', this._onDocumentKeydown);
     document.addEventListener('click', this._onDocumentClick);
     document.addEventListener('click', this._onLinkClick);
@@ -41,6 +45,7 @@ export class Burger {
     this._header.classList.remove('is-open');
     this._scrollLock.enableScrolling();
     this._focusLock.unlock('[data-header]');
+    this._headerContainer.insertBefore(this._logo, this._headerContainer.firstChild);
     document.removeEventListener('keydown', this._onDocumentKeydown);
     document.removeEventListener('click', this._onDocumentClick);
     document.removeEventListener('click', this._onLinkClick);
