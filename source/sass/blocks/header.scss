@@ -4,7 +4,7 @@
 .header {
   position: relative;
 
-  padding: 35px 0;
+  padding: 34px 0;
   min-height: 650px;
 
   color: v.$color-alice-blue;
@@ -28,7 +28,7 @@
   }
 
   @include m.vp-767 {
-    padding: 25px 0;
+    padding: 20px 0;
     min-height: 500px;
 
     font-size: 18px;
@@ -73,17 +73,17 @@
     position: relative;
     z-index: 1;
 
-    padding-top: 210px;
-    padding-left: 198px;
+    padding-top: 194px;
+    padding-left: 199px;
     max-width: 100%;
 
     @include m.vp-1023 {
-      padding-top: 230px;
+      padding-top: 215px;
       padding-left: 45px;
     }
 
     @include m.vp-767 {
-      padding-top: 143px;
+      padding-top: 129px;
       padding-left: 15px;
     }
 
@@ -91,10 +91,12 @@
       margin: 0;
       font-size: 56px;
       line-height: 66px;
+      letter-spacing: 0.04em;
 
       @include m.vp-1023 {
         font-size: 50px;
         line-height: 61px;
+        letter-spacing: 0.07em;
       }
 
       @include m.vp-767 {
@@ -104,9 +106,10 @@
     }
 
     p {
-      margin: 30px 0 0;
+      margin: 12px 0 0;
       font-size: 20px;
       line-height: 24px;
+      letter-spacing: -0.01em;
 
       @include m.vp-1023 {
         font-size: 18px;
@@ -114,7 +117,7 @@
       }
 
       @include m.vp-767 {
-        margin-top: 25px;
+        margin-top: 10px;
 
         font-size: 16px;
         line-height: 22px;
@@ -148,8 +151,8 @@
   right: 0;
 
   padding: 0;
-  width: 48px;
-  height: 48px;
+  width: 55px;
+  height: 60px;
 
   border: none;
 
@@ -190,11 +193,11 @@
   }
 
   span::before {
-    transform: translate(0, -4px);
+    transform: translate(0, -6px);
   }
 
   span::after {
-    transform: translate(0, 4px);
+    transform: translate(0, 6px);
   }
 }
 

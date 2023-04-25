@@ -7,15 +7,25 @@
   background-color: v.$color-bg-white;
 
   .container {
-    padding-top: 120px;
+    padding-top: 110px;
     padding-bottom: 120px;
+
+    @include m.vp-1023 {
+      padding-top: 88px;
+      padding-bottom: 101px;
+    }
+
+    @include m.vp-767 {
+      padding-top: 56px;
+      padding-bottom: 65px;
+    }
   }
 
   &__content {
     position: relative;
     z-index: 1;
 
-    > h2 {
+    h2 {
       text-align: center;
 
       margin: 0;
@@ -23,6 +33,16 @@
       font-weight: 600;
       font-size: 28px;
       line-height: 42px;
+
+      @include m.vp-1023 {
+        font-size: 26px;
+        line-height: 39px;
+      }
+
+      @include m.vp-767 {
+        font-size: 24px;
+        line-height: 36px;
+      }
     }
   }
 
@@ -31,7 +51,7 @@
     grid-template-columns: repeat(3, minmax(10px, 1fr));
     gap: 40px;
 
-    margin-top: 60px;
+    margin-top: 49px;
     margin-bottom: 0;
     padding-left: 0;
 
@@ -43,29 +63,50 @@
 
     @include m.vp-767 {
       grid-template-columns: repeat(1, minmax(10px, 1fr));
+
+      margin-top: 31px;
     }
   }
 
   &__item {
-    padding: 30px 30px 50px;
+    padding: 30px 30px 46px;
 
     background-color: v.$color-default-white;
 
+    @include m.vp-1023 {
+      padding: 26px 10px 20px 20px;
+    }
+
+    svg {
+      @include m.vp-1023 {
+        width: 26px;
+        height: 26px;
+      }
+    }
+
     h3 {
-      margin-top: 25px;
+      margin-top: 12px;
       margin-bottom: 0;
 
       font-weight: 500;
       font-size: 18px;
       line-height: 27px;
+
+      @include m.vp-1023 {
+        line-height: 24px;
+      }
     }
 
     p {
-      margin-top: 20px;
+      margin-top: 8px;
       margin-bottom: 0;
 
       font-size: 14px;
       line-height: 20px;
+
+      @include m.vp-1023 {
+        margin-top: 10px;
+      }
     }
   }
 

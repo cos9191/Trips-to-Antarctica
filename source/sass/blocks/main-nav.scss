@@ -20,7 +20,6 @@
 
     margin: 0;
     padding: 0;
-    //gap: 33px 10px;
     gap: 4px 33px;
 
     list-style: none;
@@ -80,6 +79,8 @@ header .main-nav {
   .main-nav {
     @include m.vp-767 {
       transform: translate(0);
+
+      grid-template-rows: fit-content(10px);
 
       overflow: auto;
     }

@@ -9,7 +9,7 @@
     grid-template-columns: repeat(2, minmax(10px, 1fr));
     gap: 100px;
 
-    padding: 120px 103px;
+    padding: 120px 46px 120px 103px;
 
     @include m.vp-1023 {
       gap: 30px;
@@ -21,7 +21,7 @@
       grid-template-columns: repeat(1, minmax(10px, 1fr));
       gap: 40px;
 
-      padding: 65px 15px;
+      padding: 60px 15px;
     }
   }
 
@@ -40,6 +40,10 @@
 
     @include m.vp-767 {
       height: 316px;
+
+      .ymaps-2-1-79-map {
+        width: 100%;
+      }
     }
 
     picture {
@@ -62,6 +66,12 @@
   &__text {
     place-self: center;
 
+    margin-right: 15px;
+
+    @include m.vp-1023 {
+      margin-right: 0;
+    }
+
     @include m.vp-767 {
       order: -1;
     }
@@ -78,16 +88,16 @@
   ul {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 22px;
 
-    margin: 45px 0 0;
+    margin: 30px 0 0;
     padding-left: 0;
 
     list-style-type: none;
-  }
 
-  @include m.vp-1023 {
-    margin-top: 40px;
+    @include m.vp-1023 {
+      gap: 17px;
+    }
   }
 
   li {
@@ -95,12 +105,16 @@
     grid-template-columns: repeat(2, minmax(10px, auto));
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 10px;
+    gap: 8px;
 
     transition: opacity v.$trans-default;
 
     @include m.hover-focus {
       opacity: 0.6;
+    }
+
+    @include m.vp-1023 {
+      gap: 6px;
     }
   }
 }

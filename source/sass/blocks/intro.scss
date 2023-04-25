@@ -7,29 +7,37 @@
   .container {
     display: grid;
     grid-template-columns: repeat(2, minmax(10px, 1fr));
-    gap: 90px;
+    gap: 40px;
 
     padding: 120px 103px 145px;
-    min-height: 566px;
 
     @include m.vp-1023 {
       gap: 30px;
 
-      padding: 100px 45px;
-      min-height: 464px;
+      padding: 100px 45px 93px;
     }
 
     @include m.vp-767 {
       grid-template-columns: repeat(1, minmax(10px, 1fr));
+      gap: 43px;
 
       padding: 65px 15px 85px;
-      min-height: unset;
     }
   }
 
   &__text,
   &__img {
     place-self: center;
+
+    @include m.vp-1023 {
+      place-self: flex-start;
+    }
+  }
+
+  &__text {
+    @include m.vp-1023 {
+      margin-top: -10px;
+    }
   }
 
   &__text h2 {
@@ -51,10 +59,10 @@
   }
 
   &__text p {
-    margin: 36px 0 0;
+    margin: 24px 0 0;
 
     @include m.vp-1023 {
-      padding-top: 26px;
+      margin-top: 17px;
     }
   }
 

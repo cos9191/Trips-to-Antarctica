@@ -15,7 +15,7 @@
   background-color: v.$color-default-white;
 
   .container {
-    padding: 95px 118px 120px;
+    padding: 85px 118px 120px;
     max-width: 1366px;
 
     @include m.vp-1279 {
@@ -23,15 +23,15 @@
     }
 
     @include m.vp-1023 {
-      padding: 100px 60px;
+      padding: 86px 60px 100px;
     }
 
     @include m.vp-767 {
-      padding: 65px 15%;
+      padding: 65px 15px;
     }
 
     @include m.vp-374 {
-      padding: 65px 25px;
+      padding: 56px 25px 65px;
     }
   }
 
@@ -43,6 +43,16 @@
     font-weight: 600;
     font-size: 28px;
     line-height: 42px;
+
+    @include m.vp-1023 {
+      font-size: 26px;
+      line-height: 39px;
+    }
+
+    @include m.vp-767 {
+      font-size: 24px;
+      line-height: 36px;
+    }
   }
 
   &__list {
@@ -50,7 +60,7 @@
     grid-template-columns: repeat(4, minmax(10px, 1fr));
     gap: 30px;
 
-    margin-top: 60px;
+    margin-top: 50px;
     margin-bottom: 0;
     padding-left: 0;
 
@@ -63,7 +73,7 @@
     @include m.vp-767 {
       grid-template-columns: repeat(1, minmax(10px, 1fr));
 
-      margin-top: 60px;
+      margin-top: 30px;
     }
   }
 
@@ -95,20 +105,34 @@
       flex-direction: column;
       justify-content: flex-end;
 
-      padding: 30px;
+      padding: 28px 30px 22px;
+
       height: 100%;
 
       color: v.$color-default-white;
+
+      @include m.vp-1023 {
+        padding: 28px 35px;
+      }
+
+      @include m.vp-767 {
+        padding: 17px 25px;
+      }
 
       &:hover,
       &:focus,
       &:focus-within {
         background-color: v.$color-default-black;
 
-        padding: 35px 20px 35px 25px;
+        padding: 28px 20px 33px 25px;
 
         @include m.vp-1023 {
           justify-content: space-between;
+          padding: 28px 30px 33px 34px;
+        }
+
+        @include m.vp-767 {
+          padding: 28px 21px 31px 25px;
         }
 
         .catalog__item-details {
@@ -194,7 +218,7 @@
       }
 
       dd {
-        margin: 5px 0 0;
+        margin: 2px 0 0;
 
         font-size: 14px;
         line-height: 20px;
@@ -220,7 +244,7 @@
   }
 
   &__btn {
-    width: 95%;
-    margin: 0 0 3px 2px;
+    width: 97%;
+    margin: 13px 0 3px 2px;
   }
 }
