@@ -51,5 +51,6 @@ mixin picture(path, image, format, width, height, altText, desktopOnly)
         src="img/" + path + "/" + image + "_desktop." + format,
         srcset= "img/" + path + "/" + image + "_desktop@2x." + format + " 2x",
         width= width, height= height,
-        alt= altText
+        alt= altText,
+        loading="lazy"
       )
