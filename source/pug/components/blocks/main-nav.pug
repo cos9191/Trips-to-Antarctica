@@ -20,7 +20,7 @@ mixin main-nav()
     ]
 
   nav.main-nav(data-mobile-menu)
-    a.main-nav__logo(href = "index.html" data-logo)
+    a.main-nav__logo(href = "index.html" aria-label="Домашняя страница" data-logo)
       +icon("logo", 70, 38)
     ul.main-nav__list
       each link in navLinks
