@@ -14,7 +14,7 @@
 .catalog {
   background-color: v.$color-default-white;
 
-  .container {
+  &__container {
     padding: 85px 118px 120px;
     max-width: 1366px;
 
@@ -23,7 +23,7 @@
     }
 
     @include m.vp-1023 {
-      padding: 86px 60px 100px;
+      padding: 89px 60px 100px;
     }
 
     @include m.vp-767 {

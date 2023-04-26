@@ -6,7 +6,7 @@
 
   background-color: v.$color-default-bg;
 
-  .container {
+  &__container {
     padding: 51px 11.93% 51px;
 
     @include m.vp-1023 {
@@ -50,7 +50,7 @@
 
       font-size: 40px;
       line-height: 60px;
-      letter-spacing: 0.07em;
+      //letter-spacing: 0.07em;
 
       @include m.vp-1023 {
         text-align: center;

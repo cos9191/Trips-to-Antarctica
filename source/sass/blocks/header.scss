@@ -10,7 +10,6 @@
   color: v.$color-alice-blue;
   line-height: 20px;
   font-weight: 500;
-
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 
   background-color: v.$color-default-bg;
@@ -18,7 +17,7 @@
   overflow: hidden;
 
   @include m.vp-1023 {
-    padding: 30px 0;
+    padding: 25px 0 30px;
     min-height: 638px;
 
     font-size: 14px;
@@ -35,9 +34,9 @@
     line-height: 22px;
   }
 
-  .container {
+  &__container {
     display: grid;
-    grid-template-columns: repeat(2, minmax(10px, auto));
+    grid-template-columns: repeat(1, minmax(10px, 1fr));
     justify-content: space-between;
     align-items: center;
     gap: 30px;
@@ -53,7 +52,7 @@
     }
   }
 
-  .header__hero {
+  &__hero {
     position: relative;
     z-index: 1;
 
@@ -62,25 +61,26 @@
     max-width: 100%;
 
     @include m.vp-1023 {
-      padding-top: 215px;
+      padding-top: 213px;
       padding-left: 45px;
     }
 
     @include m.vp-767 {
-      padding-top: 129px;
+      padding-top: 126px;
       padding-left: 15px;
     }
 
     h1 {
       margin: 0;
-      font-size: 56px;
+
+      font-size: 54px;
       line-height: 66px;
-      letter-spacing: 0.04em;
+
+      filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
 
       @include m.vp-1023 {
         font-size: 50px;
         line-height: 61px;
-        letter-spacing: 0.07em;
       }
 
       @include m.vp-767 {
@@ -91,9 +91,12 @@
 
     p {
       margin: 12px 0 0;
+
       font-size: 20px;
       line-height: 24px;
       letter-spacing: -0.01em;
+
+      filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
 
       @include m.vp-1023 {
         font-size: 18px;

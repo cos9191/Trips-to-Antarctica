@@ -21,7 +21,7 @@
     z-index: 1;
 
     display: grid;
-    grid-template-columns: repeat(3, minmax(10px, auto));
+    grid-template-columns: repeat(2, minmax(10px, auto));
     justify-content: space-between;
     align-items: center;
     gap: 30px;
@@ -42,17 +42,20 @@
     }
   }
 
-  &__logo {
-    svg {
-      @include m.vp-1023 {
-        width: 38px;
-        height: 20px;
-      }
+  .main-nav {
+    gap: 41px;
 
-      @include m.vp-767 {
-        width: 42px;
-        height: 22px;
-      }
+    @include m.vp-1023 {
+      gap: 26px;
+    }
+
+    &__list {
+      gap: 20px;
+      padding-top: 0;
+    }
+
+    &__link {
+      padding: 0;
     }
   }
 
@@ -60,7 +63,7 @@
     list-style-type: none;
 
     display: grid;
-    grid-template-columns: repeat(3, minmax(10px, auto));
+    grid-template-columns: repeat(3, minmax(10px, 1fr));
     justify-content: space-between;
     align-items: center;
     gap: 27px;
@@ -68,11 +71,26 @@
     margin: 0;
     padding-left: 0;
 
+    @include m.vp-1023 {
+      gap: 22px;
+    }
+
+    @include m.vp-767 {
+      justify-items: flex-start;
+      justify-content: unset;
+      gap: 0;
+    }
+
     svg {
       display: block;
       width: 100%;
       height: 100%;
       color: inherit;
+
+      @include m.vp-1023 {
+        height: 16px;
+        width: 16px;
+      }
     }
   }
 }
