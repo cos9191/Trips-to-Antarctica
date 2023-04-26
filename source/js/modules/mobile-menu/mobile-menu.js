@@ -1,10 +1,10 @@
 import {ScrollLock} from './../../utils/scroll-lock.js';
 import {FocusLock} from './../../utils/focus-lock';
 
-export class Burger {
+export class MobileMenu {
   constructor() {
-    this._header = document.querySelector('[data-header]');
-    this._headerContainer = document.querySelector('[data-header-container]');
+    this._header = document.querySelector('[data-mobile-menu]');
+    this._headerContainer = document.querySelector('[data-mobile-menu-container]');
     this._mobileMenu = document.querySelector('[data-mobile-menu]');
     this._burger = document.querySelector('[data-burger]');
     this._logo = document.querySelector('[data-logo]');
@@ -34,7 +34,7 @@ export class Burger {
     document.addEventListener('keydown', this._onDocumentKeydown);
     document.addEventListener('click', this._onDocumentClick);
     document.addEventListener('click', this._onLinkClick);
-    this._focusLock.lock('[data-header]');
+    this._focusLock.lock('[data-mobile-menu]');
     if (window.ls) {
       window.ls.stop();
     }
@@ -44,7 +44,7 @@ export class Burger {
     this._isMenuOpen = false;
     this._header.classList.remove('is-open');
     this._scrollLock.enableScrolling();
-    this._focusLock.unlock('[data-header]');
+    this._focusLock.unlock('[data-mobile-menu]');
     this._headerContainer.insertBefore(this._logo, this._headerContainer.firstChild);
     document.removeEventListener('keydown', this._onDocumentKeydown);
     document.removeEventListener('click', this._onDocumentClick);

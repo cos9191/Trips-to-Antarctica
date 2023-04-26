@@ -3,7 +3,7 @@ import {initModals} from './modules/modals/init-modals';
 import {Form} from './modules/form-validate/form';
 import {CustomSelect} from './modules/select/custom-select';
 import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
-import {Burger} from './modules/header/burger';
+import {MobileMenu} from './modules/mobile-menu/mobile-menu.js';
 
 // ---------------------------------
 
@@ -17,8 +17,8 @@ window.addEventListener('DOMContentLoaded', () => {
   // Modules
   // ---------------------------------
 
-  const burger = new Burger();
-  burger.init();
+  const mobileMenu = new MobileMenu();
+  mobileMenu.init();
 
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана
