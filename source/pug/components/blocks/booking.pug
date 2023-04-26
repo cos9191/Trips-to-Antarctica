@@ -19,6 +19,7 @@ mixin booking()
               inputId: "name",
               inputName: "name",
               inputPlaceholder: "Имя",
+              ariaLabel: "Ваше имя"
             })(
               data-required,
               data-on-input-validate,
@@ -32,6 +33,7 @@ mixin booking()
               inputId: "phone-number",
               inputName: "phone-number",
               inputPlaceholder: "Телефон",
+              ariaLabel: "Ваш номер телефона"
             })(
               data-required,
               data-on-input-validate,
@@ -45,6 +47,7 @@ mixin booking()
               inputId: "email",
               inputName: "email",
               inputPlaceholder: "Email",
+              ariaLabel: "Ваш адрес электронной почты"
             })(
               data-required,
               data-on-input-validate,
@@ -57,7 +60,7 @@ mixin booking()
               inputLabel: "Я&nbsp;согласен на&nbsp;обработку моих персональных данных",
               inputId: "personal-data",
               inputChecked: true,
-              inputName: "personal-data",
+              inputName: "personal-data"
             })(
               data-required,
               data-validate-type="checkbox",
