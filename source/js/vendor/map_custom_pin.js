@@ -98,4 +98,4 @@ setTimeout(() => {
   elem.type = 'text/javascript';
   document.querySelector('body').appendChild(elem);
   elem.onload = () => ymaps.ready(initMap);
-}, 500)
+}, 3000)
