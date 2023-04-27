@@ -16,7 +16,11 @@
     line-height: 15px;
   }
 
-  .container {
+  @include m.vp-767 {
+    padding: 42px 0 41px;
+  }
+
+  &__container {
     position: relative;
     z-index: 1;
 
@@ -30,7 +34,7 @@
 
     @include m.vp-767 {
       grid-template-columns: repeat(1, minmax(10px, auto));
-      align-items: flex-start;
+      gap: 26px;
     }
   }
 
@@ -46,12 +50,20 @@
     gap: 41px;
 
     @include m.vp-1023 {
-      gap: 26px;
+      gap: 24px;
     }
 
     &__list {
-      gap: 20px;
+      gap: 33px;
       padding-top: 0;
+
+      @include m.vp-1023 {
+        gap: 24px;
+      }
+
+      @include m.vp-767 {
+        gap: 17px;
+      }
     }
 
     &__link {
@@ -63,7 +75,7 @@
     list-style-type: none;
 
     display: grid;
-    grid-template-columns: repeat(3, minmax(10px, 1fr));
+    grid-template-columns: repeat(3, minmax(10px, auto));
     justify-content: space-between;
     align-items: center;
     gap: 27px;
@@ -76,9 +88,8 @@
     }
 
     @include m.vp-767 {
-      justify-items: flex-start;
-      justify-content: unset;
-      gap: 0;
+      justify-content: flex-start;
+      gap: 22px;
     }
 
     svg {
@@ -90,6 +101,12 @@
       @include m.vp-1023 {
         height: 16px;
         width: 16px;
+      }
+    }
+
+    .footer__socials-link--thin svg {
+      @include m.vp-1023 {
+        width: 10px;
       }
     }
   }

@@ -4,7 +4,7 @@
 .intro {
   background-color: v.$color-default-white;
 
-  .container {
+  &__container {
     display: grid;
     grid-template-columns: repeat(2, minmax(10px, 1fr));
     gap: 40px;
@@ -21,7 +21,7 @@
       grid-template-columns: repeat(1, minmax(10px, 1fr));
       gap: 43px;
 
-      padding: 65px 15px 85px;
+      padding: 57px 15px 84px;
     }
   }
 
@@ -37,6 +37,10 @@
   &__text {
     @include m.vp-1023 {
       margin-top: -10px;
+    }
+
+    @include m.vp-767 {
+      margin-top: 0;
     }
   }
 
@@ -63,6 +67,10 @@
 
     @include m.vp-1023 {
       margin-top: 17px;
+    }
+
+    @include m.vp-767 {
+      margin-top: 15px;
     }
   }
 

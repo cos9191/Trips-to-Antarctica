@@ -1,6 +1,6 @@
 mixin contacts()
     section.contacts(id="contacts")
-      .container
+      .container.contacts__container
         h2.visually-hidden Контакты
         #map.contacts__map()
           +picture("content/contacts", "map_fallback", "jpg", 560, 306, "Карта с расположением агентства.")

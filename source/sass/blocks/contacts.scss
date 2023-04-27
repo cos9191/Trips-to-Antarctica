@@ -4,7 +4,7 @@
 .contacts {
   background-color: v.$color-default-white;
 
-  .container {
+  &__container {
     display: grid;
     grid-template-columns: repeat(2, minmax(10px, 1fr));
     gap: 100px;
@@ -21,7 +21,7 @@
       grid-template-columns: repeat(1, minmax(10px, 1fr));
       gap: 40px;
 
-      padding: 60px 15px;
+      padding: 54px 15px;
     }
   }
 
@@ -83,12 +83,16 @@
     font-weight: 500;
     font-size: 18px;
     line-height: 27px;
+
+    @include m.vp-1023 {
+      margin-top: 6px;
+    }
   }
 
   ul {
     display: flex;
     flex-direction: column;
-    gap: 22px;
+    gap: 24px;
 
     margin: 30px 0 0;
     padding-left: 0;
@@ -96,7 +100,8 @@
     list-style-type: none;
 
     @include m.vp-1023 {
-      gap: 17px;
+      margin-top: 26px;
+      gap: 21px;
     }
   }
 
@@ -115,6 +120,16 @@
 
     @include m.vp-1023 {
       gap: 6px;
+    }
+
+    svg {
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
+
+      @include m.vp-1023 {
+        height: 30px;
+      }
     }
   }
 }
