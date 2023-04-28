@@ -62,6 +62,7 @@
       }
 
       @include m.vp-767 {
+        flex-direction: column;
         gap: 17px;
       }
     }

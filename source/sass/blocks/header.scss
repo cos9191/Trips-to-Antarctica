@@ -129,6 +129,14 @@
   }
 }
 
+// MobileMenu default state
+
+.header .main-nav__list {
+  @include m.vp-767 {
+    display: none;
+  }
+}
+
 .header__burger {
   display: none;
 
@@ -156,8 +164,6 @@
   @include m.vp-767 {
     display: block;
   }
-
-  // MobileMenu default state
 
   span,
   span::after,
@@ -188,7 +194,7 @@
   }
 }
 
-// Opened menu states
+// MobileMenu opened state
 
 .is-open {
 
@@ -214,7 +220,7 @@
     }
   }
 
-  // opened menu bg
+  // MobileMenu's bg in opened state
 
   .header__bg::after {
     content: "";

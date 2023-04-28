@@ -1,11 +1,6 @@
 import {ScrollLock} from './../../utils/scroll-lock.js';
 import {FocusLock} from './../../utils/focus-lock';
 
-const logoColors = {
-  white: '#f9fbfd',
-  black: '#011c40',
-};
-
 export class MobileMenu {
   constructor() {
     this._header = document.querySelector('[data-header]');
