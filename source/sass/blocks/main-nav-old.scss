@@ -22,14 +22,6 @@
 
     color: v.$color-default-white;
 
-    @include m.vp-1023 {
-      color: v.$color-default-white;
-    }
-
-    @include m.vp-767 {
-      color: v.$color-default-white;
-    }
-
     svg {
       @include m.vp-1023 {
         width: 38px;
@@ -59,7 +51,13 @@
     }
 
     @include m.vp-767 {
-      display: none;
+      
+      flex-direction: column;
+      gap: 10px;
+
+      padding-top: 33px;
+
+      overflow: auto;
     }
   }
 
@@ -79,50 +77,39 @@
 }
 
 // Стили мобильного меню в шапке
+header .main-nav {
+  @include m.vp-767 {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    padding: 20px 30px 20px 15px;
+    height: 100vh;
+    /* stylelint-disable-next-line */
+    height: calc(100 * var(--vh, 1vh));
+
+    color: v.$color-default-black;
+
+    background-color: v.$color-default-white;
+
+    transform: translate(100%);
+
+    overflow: hidden;
+  }
+}
 
 .is-open {
   .main-nav {
     @include m.vp-767 {
-      position: fixed;
-      top: 0;
-      right: 0;
-
-      padding: 20px 30px 20px 24px;
-      height: 100vh;
-      /* stylelint-disable-next-line */
-      height: calc(100 * var(--vh, 1vh));
-
-      color: v.$color-default-black;
-
-      background-color: v.$color-default-white;
+      transform: translate(0);
 
       grid-template-rows: fit-content(10px);
 
       overflow: auto;
-
-      animation: fadeIn 0.5s;
     }
-  }
-
-  .main-nav__list {
-    @include m.vp-767 {
-      display: flex;
-
-      flex-direction: column;
-      gap: 10px;
-
-      padding-top: 6px;
-
-      overflow: auto;
-    }
-
   }
 
   .main-nav__logo {
     color: v.$color-default-black;
-
-    @media (min-width: 767px) {
-      color: v.$color-default-white;
-    }
   }
 }

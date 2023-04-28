@@ -34,6 +34,8 @@
 
     border: 0;
 
+    background-color: v.$color-default-bg;
+
     @include m.vp-1023 {
       height: 335px;
     }

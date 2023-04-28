@@ -14,8 +14,6 @@
 
   background-color: v.$color-default-bg;
 
-  overflow: hidden;
-
   @include m.vp-1023 {
     padding: 25px 0 30px;
     min-height: 638px;
@@ -119,6 +117,8 @@
     left: 0;
     right: 0;
 
+    background-color: v.$color-default-bg;
+
     img {
       object-fit: cover;
       object-position: bottom;
@@ -192,15 +192,13 @@
 
 .is-open {
 
-  overflow: unset;
-
   // MobileMenu cross state
 
   .header__burger {
     span,
-    span::after,
     span::before {
       background-color: v.$color-default-black;
+      width: 18px;
     }
 
     span::after {
@@ -212,7 +210,7 @@
     }
 
     span {
-      transform: translate(0, 0) rotate(45deg);
+      transform: translate(8px, 2px) rotate(45deg);
     }
   }
 
@@ -226,6 +224,8 @@
     display: block;
     width: 100vw;
     height: 100vh;
+    /* stylelint-disable-next-line */
+    height: calc(100 * var(--vh, 1vh));
 
     @include m.vp-767 {
       background-color: rgba(0, 43, 102, 0.5);

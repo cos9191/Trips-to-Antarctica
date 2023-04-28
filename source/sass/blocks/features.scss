@@ -4,8 +4,6 @@
 .features {
   position: relative;
 
-  background-color: v.$color-bg-white;
-
   &__container {
     padding-top: 110px;
     padding-bottom: 120px;
@@ -134,6 +132,8 @@
     bottom: 0;
     left: 0;
     right: 0;
+
+    background-color: v.$color-bg-white;
 
     img {
       object-fit: cover;
