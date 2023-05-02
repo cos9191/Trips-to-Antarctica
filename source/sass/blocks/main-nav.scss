@@ -2,19 +2,19 @@
 @use "../mixins" as m;
 
 .main-nav {
+  position: relative;
   z-index: 3;
 
-  display: grid;
-  grid-template-columns: repeat(2, minmax(10px, auto));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
   gap: 10px;
 
   transition: transform 0.2s ease-in-out;
 
   @include m.vp-767 {
-    grid-template-columns: repeat(1, minmax(10px, auto));
-    justify-items: flex-start;
-    align-items: flex-start;
+    gap: 0;
   }
 
   &__logo {
@@ -44,18 +44,27 @@
   }
 
   &__list {
-    justify-self: flex-end;
+
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-end;
+    justify-items: flex-end;
+    gap: 4px 34px;
 
     margin: 0;
     padding: 0;
-    gap: 4px 33px;
+    width: 100%;
+    min-width: 100%;
 
     list-style: none;
 
     @include m.vp-1023 {
-      gap: 4px 23px;
+      gap: 4px 24px;
+    }
+
+    @include m.vp-767 {
+      justify-items: flex-start;
+      gap: 10px;
     }
   }
 
@@ -65,63 +74,202 @@
     color: inherit;
 
     @include m.vp-767 {
-      padding: 10px 40px 8px 0;
+      padding: 10px 10px 8px 0;
     }
 
     &.is-active {
       opacity: 0.6;
     }
   }
-}
 
-// Стили мобильного меню в шапке
+  // Burger button
 
-.is-open {
-  .main-nav {
+  &__burger {
+    display: none;
+
+    position: relative;
+    z-index: 4;
+    top: 0;
+    right: 0;
+
+    padding: 0;
+    width: 55px;
+    height: 60px;
+
+    border: none;
+
+    background-color: transparent;
+    cursor: pointer;
+    transition: opacity v.$trans-default;
+
+    @include m.hover-focus {
+      opacity: 0.6;
+    }
+
     @include m.vp-767 {
-      position: fixed;
-      top: 0;
+      display: block;
+    }
+
+    span,
+    span::after,
+    span::before {
+      position: absolute;
+      content: "";
+
+      left: 0;
       right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
 
-      display: flex;
-      flex-direction: column;
-      flex-wrap: nowrap;
-
-      padding: 20px 30px 20px 24px;
-      min-height: 100vh;
-      /* stylelint-disable-next-line */
-      min-height: calc(100 * var(--vh, 1vh));
-      max-height: 100vh;
-      /* stylelint-disable-next-line */
-      max-height: calc(100 * var(--vh, 1vh));
-      max-width: 80vw;
-
-      color: v.$color-default-black;
+      width: 24px;
+      height: 2px;
 
       background-color: v.$color-default-white;
-      overflow: auto;
-      animation: fadeIn 0.3s;
+
+      transition: transform 0.2s ease-in-out;
+    }
+
+    span::before {
+      transform: translate(0, -6px);
+    }
+
+    span::after {
+      transform: translate(0, 6px);
     }
   }
+}
 
-  .main-nav__list {
+
+// Mobile menu styles
+
+header {
+  .main-nav__links-wrapper {
     @include m.vp-767 {
-      flex-shrink: 0;
-
-      display: grid;
-      grid-template-columns: repeat(1, minmax(10px, 1fr));
-
-      padding-top: 6px;
-
-      overflow: auto;
+      display: none;
     }
   }
 
   .main-nav__logo {
+    @include m.vp-767 {
+      margin: 6px 0 0 15px;
+    }
+  }
+}
+
+.is-open .main-nav {
+  @include m.vp-767 {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    display: grid;
+    grid-template-areas: "logo burger" "links links";
+    grid-template-rows: fit-content(10px);
+    justify-items: flex-start;
+    align-items: flex-start;
+    gap: 15px;
+
+    padding: 0;
+    min-height: 100vh;
+    /* stylelint-disable-next-line */
+    min-height: calc(100 * var(--vh, 1vh));
+    max-height: 100vh;
+    /* stylelint-disable-next-line */
+    max-height: calc(100 * var(--vh, 1vh));
+    min-width: 285px;
+    max-width: 80vw;
+
+    color: v.$color-default-black;
+
+    background-color: v.$color-default-white;
+    overflow: auto;
+    animation: fadeIn 0.3s;
+  }
+
+  &__logo {
     color: v.$color-default-black;
 
     @media (min-width: 767px) {
       color: v.$color-default-white;
     }
+
+    @include m.vp-767 {
+      grid-area: logo;
+
+      margin: 20px 0 0 15px;
+    }
+  }
+
+  &__links-wrapper {
+    @include m.vp-767 {
+      grid-area: links;
+
+      display: grid;
+      grid-template-columns: minmax(10px, 1fr);
+
+      padding: 0 30px 20px 24px;
+    }
+  }
+
+  &__list {
+    @include m.vp-767 {
+      display: grid;
+      grid-template-columns: minmax(10px, 1fr);
+
+      overflow: auto;
+    }
+  }
+
+  // Burger cross state
+
+  &__burger {
+    @include m.vp-767 {
+      grid-area: burger;
+      justify-self: flex-end;
+    }
+
+    span,
+    span::before {
+      background-color: v.$color-default-black;
+      width: 18px;
+    }
+
+    span::after {
+      display: none;
+    }
+
+    span::before {
+      transform: translate(0, 0) rotate(90deg);
+    }
+
+    span {
+      transform: translate(8px, 2px) rotate(45deg);
+    }
+  }
+}
+
+// MobileMenu's bg in opened state
+
+.is-open .header__bg::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0;
+
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  /* stylelint-disable-next-line */
+  height: calc(100 * var(--vh, 1vh));
+
+  @include m.vp-767 {
+    background-color: rgba(0, 43, 102, 0.5);
+  }
+}
+
+.is-open {
+  @include m.vp-767 {
+    padding-top: 60px; // main-nav height in mobile-menu close state
   }
 }

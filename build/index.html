@@ -50,35 +50,37 @@
     <div class="wrapper">
       <header class="header" data-header>
         <div class="container header__container">
-          <button class="header__burger btn-reset" type="button" aria-label="Переключатель отображения меню" aria-pressed="false" data-burger><span></span></button>
           <nav class="main-nav"><a class="main-nav__logo" href="index.html" aria-label="Домашняя страница">
               <svg width="70" height="38" aria-hidden="true">
                 <use xlink:href="#logo"></use>
               </svg></a>
-            <ul class="main-nav__list">
-              <li class="main-nav__item"><a class="main-nav__link" href="#features">Преимущества </a>
-              </li>
-              <li class="main-nav__item"><a class="main-nav__link" href="#!">Направления</a>
-              </li>
-              <li class="main-nav__item"><a class="main-nav__link" href="#catalog">Ближайшие круизы</a>
-              </li>
-              <li class="main-nav__item"><a class="main-nav__link" href="#contacts">Контакты</a>
-              </li>
-            </ul>
+            <button class="main-nav__burger btn-reset" type="button" aria-label="Переключатель отображения меню" aria-pressed="false" data-burger><span></span></button>
+            <div class="main-nav__links-wrapper">
+              <ul class="main-nav__list">
+                <li class="main-nav__item"><a class="main-nav__link" href="#features">Преимущества </a>
+                </li>
+                <li class="main-nav__item"><a class="main-nav__link" href="#!">Направления</a>
+                </li>
+                <li class="main-nav__item"><a class="main-nav__link" href="#catalog">Ближайшие круизы</a>
+                </li>
+                <li class="main-nav__item"><a class="main-nav__link" href="#contacts">Контакты</a>
+                </li>
+              </ul>
+            </div>
           </nav>
-        </div>
-        <div class="header__hero">
-          <h1>Круизы в&nbsp;Антарктику</h1>
-          <p>Волшебный мир айсбергов&nbsp;и&nbsp;пингвинов</p>
-        </div>
-        <div class="header__bg" data-close-menu>
-          <picture>
-            <source type="image/webp" media="(max-width: 767px)" srcset="img/content/header/header_mobile.webp, img/content/header/header_mobile@2x.webp 2x">
-            <source media="(max-width: 767px)" srcset="img/content/header/header_mobile.jpg, img/content/header/header_mobile@2x.jpg 2x">
-            <source type="image/webp" media="(max-width: 1023px)" srcset="img/content/header/header_tablet.webp, img/content/header/header_tablet@2x.webp 2x">
-            <source media="(max-width: 1023px)" srcset="img/content/header/header_tablet.jpg, img/content/header/header_tablet@2x.jpg 2x">
-            <source type="image/webp" srcset="img/content/header/header_desktop.webp, img/content/header/header_desktop@2x.webp 2x"><img src="img/content/header/header_desktop.jpg" srcset="img/content/header/header_desktop@2x.jpg 2x" width="1366" height="650" alt="Облака, заснеженные горы, залив." loading="lazy">
-          </picture>
+          <section class="header__hero">
+            <h1>Круизы в&nbsp;Антарктику</h1>
+            <p>Волшебный мир айсбергов&nbsp;и&nbsp;пингвинов</p>
+          </section>
+          <div class="header__bg" data-close-menu>
+            <picture>
+              <source type="image/webp" media="(max-width: 767px)" srcset="img/content/header/header_mobile.webp, img/content/header/header_mobile@2x.webp 2x">
+              <source media="(max-width: 767px)" srcset="img/content/header/header_mobile.jpg, img/content/header/header_mobile@2x.jpg 2x">
+              <source type="image/webp" media="(max-width: 1023px)" srcset="img/content/header/header_tablet.webp, img/content/header/header_tablet@2x.webp 2x">
+              <source media="(max-width: 1023px)" srcset="img/content/header/header_tablet.jpg, img/content/header/header_tablet@2x.jpg 2x">
+              <source type="image/webp" srcset="img/content/header/header_desktop.webp, img/content/header/header_desktop@2x.webp 2x"><img src="img/content/header/header_desktop.jpg" srcset="img/content/header/header_desktop@2x.jpg 2x" width="1366" height="650" alt="Облака, заснеженные горы, залив." loading="lazy">
+            </picture>
+          </div>
         </div>
       </header>
       <main>
@@ -440,16 +442,18 @@
               <svg width="70" height="38" aria-hidden="true">
                 <use xlink:href="#logo"></use>
               </svg></a>
-            <ul class="main-nav__list">
-              <li class="main-nav__item"><a class="main-nav__link" href="#features">Преимущества </a>
-              </li>
-              <li class="main-nav__item"><a class="main-nav__link" href="#!">Направления</a>
-              </li>
-              <li class="main-nav__item"><a class="main-nav__link" href="#catalog">Ближайшие круизы</a>
-              </li>
-              <li class="main-nav__item"><a class="main-nav__link" href="#contacts">Контакты</a>
-              </li>
-            </ul>
+            <div class="main-nav__links-wrapper">
+              <ul class="main-nav__list">
+                <li class="main-nav__item"><a class="main-nav__link" href="#features">Преимущества </a>
+                </li>
+                <li class="main-nav__item"><a class="main-nav__link" href="#!">Направления</a>
+                </li>
+                <li class="main-nav__item"><a class="main-nav__link" href="#catalog">Ближайшие круизы</a>
+                </li>
+                <li class="main-nav__item"><a class="main-nav__link" href="#contacts">Контакты</a>
+                </li>
+              </ul>
+            </div>
           </nav>
           <ul class="footer__socials-list">
             <li><a class="footer__socials-link footer__socials-link--thin" target="_blank" href="https://vk.com/htmlacademy"><span class="visually-hidden">Мы в Одноклассниках.</span>

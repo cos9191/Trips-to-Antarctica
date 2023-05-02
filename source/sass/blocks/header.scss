@@ -4,7 +4,6 @@
 .header {
   position: relative;
 
-  padding: 34px 0;
   min-height: 650px;
 
   color: v.$color-alice-blue;
@@ -15,7 +14,6 @@
   background-color: v.$color-default-bg;
 
   @include m.vp-1023 {
-    padding: 25px 0 30px;
     min-height: 638px;
 
     font-size: 14px;
@@ -25,7 +23,6 @@
   }
 
   @include m.vp-767 {
-    padding: 20px 0;
     min-height: 500px;
 
     font-size: 18px;
@@ -33,13 +30,16 @@
   }
 
   &__container {
-    display: grid;
-    grid-template-columns: repeat(1, minmax(10px, 1fr));
-    justify-content: space-between;
-    align-items: center;
-    gap: 30px;
+    padding-top: 33px;
+    min-height: 70px;
 
-    min-height: 30px;
+    @include m.vp-1023 {
+      padding-top: 30px;
+    }
+
+    @include m.vp-767 {
+      padding: 0;
+    }
   }
 
   a {
@@ -51,20 +51,20 @@
   }
 
   &__hero {
-    position: relative;
+    position: absolute;
     z-index: 1;
 
     padding-top: 194px;
-    padding-left: 199px;
+    padding-left: 95px;
     max-width: 100%;
 
     @include m.vp-1023 {
-      padding-top: 213px;
-      padding-left: 45px;
+      padding-top: 215px;
+      padding-left: 0;
     }
 
     @include m.vp-767 {
-      padding-top: 126px;
+      padding-top: 116px;
       padding-left: 15px;
     }
 
@@ -125,116 +125,6 @@
 
       height: 100%;
       width: 100%;
-    }
-  }
-}
-
-// MobileMenu default state
-
-.header .main-nav__list {
-  @include m.vp-767 {
-    display: none;
-  }
-}
-
-.header__burger {
-  display: none;
-
-  position: absolute;
-  z-index: 4;
-  top: 0;
-  right: 0;
-
-  padding: 0;
-  width: 55px;
-  height: 60px;
-
-  border: none;
-
-  background-color: transparent;
-
-  cursor: pointer;
-
-  transition: opacity v.$trans-default;
-
-  @include m.hover-focus {
-    opacity: 0.6;
-  }
-
-  @include m.vp-767 {
-    display: block;
-  }
-
-  span,
-  span::after,
-  span::before {
-    position: absolute;
-    content: "";
-
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-
-    width: 24px;
-    height: 2px;
-
-    background-color: v.$color-default-white;
-
-    transition: transform 0.2s ease-in-out;
-  }
-
-  span::before {
-    transform: translate(0, -6px);
-  }
-
-  span::after {
-    transform: translate(0, 6px);
-  }
-}
-
-// MobileMenu opened state
-
-.is-open {
-
-  // MobileMenu cross state
-
-  .header__burger {
-    span,
-    span::before {
-      background-color: v.$color-default-black;
-      width: 18px;
-    }
-
-    span::after {
-      display: none;
-    }
-
-    span::before {
-      transform: translate(0, 0) rotate(90deg);
-    }
-
-    span {
-      transform: translate(8px, 2px) rotate(45deg);
-    }
-  }
-
-  // MobileMenu's bg in opened state
-
-  .header__bg::after {
-    content: "";
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    display: block;
-    width: 100vw;
-    height: 100vh;
-    /* stylelint-disable-next-line */
-    height: calc(100 * var(--vh, 1vh));
-
-    @include m.vp-767 {
-      background-color: rgba(0, 43, 102, 0.5);
     }
   }
 }

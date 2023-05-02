@@ -1,4 +1,4 @@
-mixin main-nav()
+mixin main-nav(mobileMenu)
   -
     const navLinks = [
       {
@@ -19,14 +19,36 @@ mixin main-nav()
       },
     ]
 
-  nav.main-nav
-    a.main-nav__logo(href = "index.html" aria-label="Домашняя страница")
-      +icon("logo", 70, 38)
-    ul.main-nav__list
-      each link in navLinks
-        - const activeState = currentUrl === link.href
-        li.main-nav__item
-          if(activeState)
-            span.main-nav__link.is-active=link.text
-          else
-            a.main-nav__link(href=link.href)=link.text
+  if mobileMenu
+    nav.main-nav
+      a.main-nav__logo(href = "index.html" aria-label="Домашняя страница")
+        +icon("logo", 70, 38)
+      button.main-nav__burger.btn-reset(
+        type="button",
+        aria-label="Переключатель отображения меню",
+        aria-pressed="false"
+        data-burger
+      )
+        span
+      .main-nav__links-wrapper
+        ul.main-nav__list
+          each link in navLinks
+            - const activeState = currentUrl === link.href
+            li.main-nav__item
+              if(activeState)
+                span.main-nav__link.is-active=link.text
+              else
+                a.main-nav__link(href=link.href)=link.text
+  else
+    nav.main-nav
+      a.main-nav__logo(href = "index.html" aria-label="Домашняя страница")
+        +icon("logo", 70, 38)
+      .main-nav__links-wrapper
+        ul.main-nav__list
+          each link in navLinks
+            - const activeState = currentUrl === link.href
+            li.main-nav__item
+              if(activeState)
+                span.main-nav__link.is-active=link.text
+              else
+                a.main-nav__link(href=link.href)=link.text
