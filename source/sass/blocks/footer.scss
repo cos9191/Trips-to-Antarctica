@@ -13,13 +13,14 @@
 
   @include m.vp-1023 {
     padding-top: 44px;
+    padding-bottom: 42px;
 
     font-size: 12px;
     line-height: 15px;
   }
 
   @include m.vp-767 {
-    padding: 42px 0 41px;
+    padding: 42px 0 30px;
   }
 
   &__container {
@@ -46,6 +47,7 @@
     @include m.vp-767 {
       grid-template-columns: repeat(1, minmax(10px, auto));
       gap: 15px;
+      padding: 0 15px;
     }
   }
 
