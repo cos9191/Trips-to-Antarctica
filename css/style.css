@@ -2379,6 +2379,7 @@ html {
 
   .footer {
     padding-top: 44px;
+    padding-bottom: 42px;
     font-size: 12px;
     line-height: 15px;
   }
@@ -2688,13 +2689,14 @@ html {
   }
 
   .footer {
-    padding: 42px 0 41px;
+    padding: 42px 0 30px;
   }
 
   .footer__container {
     -ms-grid-columns: (minmax(10px, auto))[1];
     grid-template-columns: repeat(1, minmax(10px, auto));
     gap: 15px;
+    padding: 0 15px;
   }
 
   .footer .main-nav {
