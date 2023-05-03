@@ -12,6 +12,8 @@
   background-color: v.$color-default-black;
 
   @include m.vp-1023 {
+    padding-top: 44px;
+
     font-size: 12px;
     line-height: 15px;
   }
@@ -30,11 +32,20 @@
     align-items: center;
     gap: 30px;
 
-    overflow: hidden;
+    padding-right: 94px;
+
+    @include m.vp-1279 {
+      padding-left: 45px;
+      padding-right: 45px;
+    }
+
+    @include m.vp-1023 {
+      padding-right: 35px;
+    }
 
     @include m.vp-767 {
       grid-template-columns: repeat(1, minmax(10px, auto));
-      gap: 26px;
+      gap: 15px;
     }
   }
 
@@ -54,12 +65,14 @@
     }
 
     @include m.vp-767 {
+      display: flex;
+
       align-items: flex-start;
       flex-direction: column;
     }
 
     &__list {
-      gap: 33px;
+      gap: 4px 33px;
       padding-top: 0;
 
       @include m.vp-1023 {
@@ -84,18 +97,24 @@
     grid-template-columns: repeat(3, minmax(10px, auto));
     justify-content: space-between;
     align-items: center;
-    gap: 27px;
+    gap: 6px;
 
     margin: 0;
     padding-left: 0;
 
     @include m.vp-1023 {
-      gap: 22px;
+      gap: 3px;
     }
 
     @include m.vp-767 {
       justify-content: flex-start;
-      gap: 22px;
+
+      margin-left: -10px;
+    }
+
+    .footer__socials-link {
+      display: block;
+      padding: 10px;
     }
 
     svg {

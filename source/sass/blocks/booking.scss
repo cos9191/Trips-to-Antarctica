@@ -7,7 +7,11 @@
   background-color: v.$color-default-bg;
 
   &__container {
-    padding: 51px 11.93% 51px;
+    padding: 51px 163px 51px;
+
+    @include m.vp-1279 {
+      padding: 51px 100px 51px;
+    }
 
     @include m.vp-1023 {
       padding: 88px 100px 100px;
@@ -156,6 +160,10 @@
     @include m.vp-767 {
       margin-top: 29px;
     }
+  }
+
+  .custom-toggle--checkbox:focus-within {
+    outline: auto;
   }
 
   &__btn {

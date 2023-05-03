@@ -51,11 +51,10 @@
   }
 
   &__hero {
-    position: absolute;
+    position: relative;
     z-index: 1;
 
-    padding-top: 194px;
-    padding-left: 95px;
+    padding: 194px 50px 50px 95px;
     max-width: 100%;
 
     @include m.vp-1023 {
